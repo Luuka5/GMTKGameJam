@@ -63,7 +63,7 @@ public class CharacterMoover : MonoBehaviour
     {
         if (_grounded && _moveVector.y < 0)
         {
-            _moveVector.y = _gravityValue * Time.deltaTime;
+            _moveVector.y = _gravityValue*3 * Time.deltaTime;
         }
 
     }

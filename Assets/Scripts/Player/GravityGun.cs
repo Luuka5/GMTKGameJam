@@ -202,7 +202,7 @@ IEnumerator Grab()
 
             selectedObject.Throw(hit.point, _throwSpeed);
 
-            Debug.Log("Throw1");
+            
 
             ChangeGravGunState(AimOff());
 
@@ -211,7 +211,7 @@ IEnumerator Grab()
         {
 
             selectedObject.Throw(cam.transform.forward * _throwSpeed);
-            Debug.Log("Throw2");
+         
             ChangeGravGunState(AimOff());
 
             yield return new WaitForEndOfFrame();
@@ -220,7 +220,7 @@ IEnumerator Grab()
     }
 IEnumerator Push()
     {
-        Debug.Log("Push!");
+       
         CheckForSelected();
         _gravGunState = GravityGunStates.Push;
        

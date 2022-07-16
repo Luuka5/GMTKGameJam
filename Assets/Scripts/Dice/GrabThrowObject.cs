@@ -9,6 +9,9 @@ public class GrabThrowObject : MonoBehaviour
     private Rigidbody _rigidbody;
     private bool _beingGrabbed;
     private int _defaultLayerID;
+    [SerializeField] private int _tempLayerID;
+    [SerializeField] private float _timeToChangelayer;
+
 
     private void Awake()
     {
@@ -45,11 +48,18 @@ public class GrabThrowObject : MonoBehaviour
     public void Release()
     {
         transform.SetParent(null);
-        gameObject.layer = _defaultLayerID;
+        gameObject.layer = _tempLayerID;
+        StartCoroutine(changeToDefaultLayer());
         _rigidbody.isKinematic = false;
         _beingGrabbed = false;
     }
 
+
+    IEnumerator changeToDefaultLayer()
+    {
+        yield return new WaitForSeconds(_timeToChangelayer);
+        gameObject.layer = _defaultLayerID;
+    }
 
 
     public void Push(Vector3 _impulse)
@@ -62,7 +72,7 @@ public class GrabThrowObject : MonoBehaviour
     {
         while (_beingGrabbed)
         {
-            Debug.Log("Stabilize");
+         
 
             Vector3 _newDirection = Vector3.Normalize( _whereToGrab.position - transform.position);
             _rigidbody.velocity = _newDirection * _rigidbody.velocity.magnitude;
