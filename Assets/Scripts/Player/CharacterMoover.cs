@@ -36,7 +36,7 @@ public class CharacterMoover : MonoBehaviour
 
 
 
-        Debug.Log(_grounded);
+     
 
         _moveVector += Vector3.right * _horizontalInput * _speed + Vector3.forward * _verticalInput * _speed; //Move Vectors
      
