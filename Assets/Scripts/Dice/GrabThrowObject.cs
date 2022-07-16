@@ -73,7 +73,6 @@ public class GrabThrowObject : MonoBehaviour
         while (_beingGrabbed)
         {
          
-
             Vector3 _newDirection = Vector3.Normalize( _whereToGrab.position - transform.position);
             _rigidbody.velocity = _newDirection * _rigidbody.velocity.magnitude;
 
