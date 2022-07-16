@@ -41,6 +41,13 @@ public class ObjectThatCanDamage : MonoBehaviour
 		_diceCore.OnKill();
     }
 
+
+	public void ActivateContinueSpeed()
+    {
+		StartCoroutine(ContinueSpeed(direction * speed));
+	}
+
+
 	IEnumerator ContinueSpeed(Vector3 _speed)
     {
 		_rigidbody.velocity = Vector3.zero;

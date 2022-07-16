@@ -11,12 +11,14 @@ public class GrabThrowObject : MonoBehaviour
     private int _defaultLayerID;
     [SerializeField] private int _tempLayerID;
     [SerializeField] private float _timeToChangelayer;
-
+    [SerializeField] private float _rotationMagnotide;
+  
 
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _defaultLayerID = gameObject.layer;
+        _rigidbody.maxAngularVelocity = Mathf.Infinity;
     }
 
     public void Grab(Transform _whereToGrab, float _grabSpeed)
@@ -42,7 +44,7 @@ public class GrabThrowObject : MonoBehaviour
     public void Hold(Transform _holdPoint,float _maxSpeed)
     {
         transform.position = Vector3.MoveTowards(transform.position, _holdPoint.position,_maxSpeed);
-
+        
     }
 
     public void Release()
@@ -90,11 +92,22 @@ public class GrabThrowObject : MonoBehaviour
 
 
         Release();
+
+       
+
+
+        Vector3 _rotationDirection = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1));
+        
+        _rigidbody.AddTorque(_rotationDirection.normalized*_rotationMagnotide, ForceMode.VelocityChange);
         _rigidbody.AddForce(_direction*_throwSpeed, ForceMode.VelocityChange);
      }
 
     public void Throw(Vector3 _throwVector)
-    {    Release();
+    {    
+        Release();
+
+        Vector3 _rotationDirection = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1));
+        _rigidbody.AddTorque(_rotationDirection.normalized * _rotationMagnotide, ForceMode.VelocityChange);
         _rigidbody.AddForce(_throwVector, ForceMode.VelocityChange);
     }
 
