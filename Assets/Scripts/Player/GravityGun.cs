@@ -9,8 +9,16 @@ public class GravityGun : MonoBehaviour
     [SerializeField] private float _grabSpeed;
     [SerializeField] private Transform _holdGrabPoint;
     [SerializeField] private float _grabRadius;
+    [SerializeField] private int _holdLayerId;
+
+    [Header("Hold")]
+    [SerializeField] private float _maxHoldSpeed;
+
 
     [Header("Throw")]
+    [SerializeField] private LayerMask _throwCheckRayLayer;
+    [SerializeField] private float _throwSpeed;
+
 
     [Header("Push")]
     [SerializeField] private float _pushSpeed;
@@ -26,6 +34,7 @@ public class GravityGun : MonoBehaviour
     [SerializeField] private Camera cam;
     private GrabThrowObject selectedObject;
     bool _clickLMB;
+    bool _clickRMB;
 
 
 
@@ -40,7 +49,17 @@ public class GravityGun : MonoBehaviour
         _clickLMB = false;
         if (Input.GetMouseButtonDown(0))
             _clickLMB = true;
-            
+
+        if (Input.GetMouseButtonUp(0))
+            _clickLMB = false;
+
+
+        if (Input.GetMouseButtonDown(1))
+            _clickRMB = true;
+
+        if (Input.GetMouseButtonUp(1))
+            _clickRMB = false;
+
     }
     IEnumerator AimOff()
     {
@@ -105,14 +124,10 @@ IEnumerator AimOn()
             else ChangeGravGunState(AimOff());
 
 
-            if (_clickLMB)
-            {
-                _clickLMB = false;
+            if (CheckLMB())    
                 ChangeGravGunState(Push());
-               
-            }
 
-            if (Input.GetButtonDown("Fire2"))
+            if (CheckRMB())
                 ChangeGravGunState(Grab());
 
 
@@ -124,14 +139,18 @@ IEnumerator Grab()
     {
         CheckForSelected();
         _gravGunState = GravityGunStates.Grab;
+
+        selectedObject.Grab(_holdGrabPoint, _grabSpeed);
+
         while (true)
         {
-            if (Input.GetButtonDown("Fire2"))
+            if (CheckRMB())
                 ChangeGravGunState(Release());
 
-            float distance = Vector3.Distance(_holdGrabPoint.position, selectedObject.transform.position);
 
-            if (distance<_grabRadius)
+            float _distance = Vector3.Distance(_holdGrabPoint.position, selectedObject.transform.position);
+
+            if (_distance<_grabRadius)
             {
                 ChangeGravGunState(Hold());
             }
@@ -147,18 +166,21 @@ IEnumerator Grab()
     {
         CheckForSelected();
         _gravGunState = GravityGunStates.Hold;
+        selectedObject.Grabbed(_holdGrabPoint,_holdLayerId);
 
         while (true)
         {
 
+            selectedObject.Hold(_holdGrabPoint, _maxHoldSpeed);
 
 
-
-            if (Input.GetButtonDown("Fire1"))
+            if (CheckLMB())
                 ChangeGravGunState(Throw());
 
-            if (Input.GetButtonDown("Fire2"))
+            if (CheckRMB())
                 ChangeGravGunState(Release());
+
+
 
             yield return new WaitForEndOfFrame();
 
@@ -170,12 +192,28 @@ IEnumerator Grab()
     {
         CheckForSelected();
         _gravGunState = GravityGunStates.Throw;
-        while (true)
+
+
+        RaycastHit hit;
+        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity,_throwCheckRayLayer))
         {
 
+            selectedObject.Throw(hit.point, _throwSpeed);
 
+            Debug.Log("Throw1");
 
             ChangeGravGunState(AimOff());
+
+        }
+        else
+        {
+
+            selectedObject.Throw(cam.transform.forward * _throwSpeed);
+            Debug.Log("Throw2");
+            ChangeGravGunState(AimOff());
+
             yield return new WaitForEndOfFrame();
 
         }
@@ -217,5 +255,19 @@ private void CheckForSelected()
     {
         if (selectedObject == null)
             ChangeGravGunState(Release());
+    }
+
+ bool CheckLMB()
+    {
+       bool  _temp = _clickLMB;
+        _clickLMB = false;
+        return _temp;
+    }
+
+    bool CheckRMB()
+    {
+        bool _temp = _clickRMB;
+        _clickRMB = false;
+        return _temp;
     }
 }

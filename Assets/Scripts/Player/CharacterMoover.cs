@@ -63,7 +63,7 @@ public class CharacterMoover : MonoBehaviour
     {
         if (_grounded && _moveVector.y < 0)
         {
-            _moveVector.y = 0f;
+            _moveVector.y = _gravityValue * Time.deltaTime;
         }
 
     }
@@ -71,7 +71,7 @@ public class CharacterMoover : MonoBehaviour
     private void GravityApplyer()
     {
 
-        _moveVector.y += _gravityValue*Time.deltaTime;
+        _moveVector.y += _gravityValue * Time.deltaTime;
 
     }
 
