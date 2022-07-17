@@ -31,6 +31,8 @@ public class WeaponIK : MonoBehaviour
 	[SerializeField] float distanceLimit = 1.5f;
 	[SerializeField] float rotateSpeed = 1f;
 
+	private bool _isActive = false;
+
 	EnemyCore enemyCore;
 
 	Transform[] boneTransforms;
@@ -47,6 +49,11 @@ public class WeaponIK : MonoBehaviour
 
 		enemyCore = GetComponent<EnemyCore>();
     }
+
+	public void ChangeIKState(bool _newState)
+	{ _isActive = _newState;
+		Debug.Log(_isActive);
+	}
 
 	Vector3 GetTargetPosition()
 	{
@@ -81,8 +88,11 @@ public class WeaponIK : MonoBehaviour
 	// Update is called once per frame
 	void LateUpdate()
     {
+		
+		if (!_isActive) return;
 		if (!enemyCore.GetAliveState()) return;
 
+		
 
 		if (aimTransform == null) return;
 		if (targetTransform == null) return;

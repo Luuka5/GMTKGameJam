@@ -25,6 +25,8 @@ public class RangedEnemyBrain : MonoBehaviour
 
 	[SerializeField] float maxLookingAngle = 50f;
 
+	[SerializeField] WeaponIK weaponIK;
+
 	float distanceToPlayer;
 
 	public enum States {Idle, Chase, Attack, RunAway, Aim, Die};
@@ -106,6 +108,7 @@ public class RangedEnemyBrain : MonoBehaviour
 
 	IEnumerator Idle()
 	{
+		weaponIK.ChangeIKState(false);
 		agent.speed = 0;
 		animator.SetBool("Running", false);
 		agent.destination = transform.position;
@@ -119,9 +122,11 @@ public class RangedEnemyBrain : MonoBehaviour
 	IEnumerator Chase()
 	{
 		agent.speed = speed;
+		
 		animator.SetBool("Running", true);
 		while ((distanceToPlayer > shootDistance - additionalDistance || !LookingAtPlayer()) && distanceToPlayer > runAwayDistance-additionalDistance)
 		{
+			weaponIK.ChangeIKState(false);
 			agent.destination = player.position;
 			yield return new WaitForEndOfFrame();
 		}
@@ -141,6 +146,7 @@ public class RangedEnemyBrain : MonoBehaviour
 		IEnumerator Attack()
 	{
 		agent.speed = 0;
+		weaponIK.ChangeIKState(true);
 		animator.SetBool("Running", false);
 		agent.destination = transform.position;
 		enemyRangedController.SetAutoShootState(true);
@@ -168,6 +174,7 @@ public class RangedEnemyBrain : MonoBehaviour
 
 	IEnumerator RunAway()
 	{
+		weaponIK.ChangeIKState(false);
 		//agent.speed = speed;
 		agent.speed = speed;
 		animator.SetBool("Running", false);
