@@ -9,6 +9,7 @@ public class EnemyCore : MonoBehaviour, ICanDie, IDamageable
 
 
 	[SerializeField] private int _health;
+	[SerializeField] public int enemyNumber;
 	private bool _isAlive = true;
 	public Animator animator;
 	public EnemyRagdollController enemyRagdollController;
@@ -44,8 +45,9 @@ public class EnemyCore : MonoBehaviour, ICanDie, IDamageable
 		if (_canTakeDamage)
 			ChangeHealth(-amount);
 
+		damageParticles.Emit(amount * 5);
 		if (checkDeath()) Die();
-		//else damageParticles.Emit(amount / 5);
+		
 
 		StartCoroutine(DamagePause());
 
