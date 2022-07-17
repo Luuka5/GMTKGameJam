@@ -21,7 +21,7 @@ public class EnemyCore : MonoBehaviour, ICanDie, IDamageable
     }
 
     private void Start()
-    {
+    {	
 		rangedEnemyBrain.player = enemySettings.playerData.playerCore.transform;
 
 	}

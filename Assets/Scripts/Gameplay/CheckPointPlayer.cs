@@ -5,4 +5,5 @@ using UnityEngine;
 public class CheckPointPlayer : MonoBehaviour
 {
     public CheckPoint lastCheckPoint;
+
 }
