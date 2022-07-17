@@ -27,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void SetWave(int index)
     {
+        Debug.Log("Wave"+ )
         _waveIndex = index;
         StopCoroutine(_coroutine);
         StartCoroutine(_coroutine);
