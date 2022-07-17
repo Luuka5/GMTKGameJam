@@ -29,6 +29,7 @@ public class EnemyCore : MonoBehaviour, ICanDie, IDamageable
 	{	
 		_isAlive = false;
 		enemyRagdollController.Die();
+		rangedEnemyBrain.Die();
 	}
 
 	public void ChangeHealth(int amount)
@@ -38,7 +39,7 @@ public class EnemyCore : MonoBehaviour, ICanDie, IDamageable
 
 	public void TakeDamage(int amount)
 	{
-		Debug.Log(amount);
+		Debug.Log("Damege: " + amount);
 
 		if (_canTakeDamage)
 			ChangeHealth(-amount);

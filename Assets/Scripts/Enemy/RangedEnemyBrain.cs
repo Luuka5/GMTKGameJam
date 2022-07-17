@@ -62,6 +62,11 @@ public class RangedEnemyBrain : MonoBehaviour
 		return angle < maxLookingAngle;
 		
 	}
+	
+	public void Die()
+    {
+		ChangeState(States.Die);
+    }
 
 	public void ChangeState(States newState)
 	{
@@ -90,6 +95,7 @@ public class RangedEnemyBrain : MonoBehaviour
 				break;
 
 			case States.Die:
+				agent.speed = 0;
 				StopAllCoroutines();
 				break;
 		}
