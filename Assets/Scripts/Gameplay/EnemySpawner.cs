@@ -5,14 +5,13 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     private Wave[] _waves;
-    public GameObject prefab;
     private int _waveIndex = 0;
     private Coroutine _startCoroutine;
     private IEnumerator _coroutine;
     private bool finished = false;
 
     private void Awake()
-    {
+    {   
         Transform transform = GetComponent<Transform>();
         _waves = new Wave[transform.childCount];
 
@@ -21,16 +20,15 @@ public class EnemySpawner : MonoBehaviour
             _waves[i] = transform.GetChild(i).gameObject.GetComponent<Wave>();
         }
 
-        _coroutine = StartWave();
-
-        StartCoroutine(_coroutine);
+        SetWave(0);
     }
 
     public void SetWave(int index)
     {
         _waveIndex = index;
         Debug.Log("wave set to  " + _waveIndex);
-        StopCoroutine(_coroutine);
+        if (_coroutine != null) 
+            StopCoroutine(_coroutine);
         _coroutine = StartWave();
         StartCoroutine(_coroutine);
     }
@@ -52,23 +50,47 @@ public class EnemySpawner : MonoBehaviour
 
     private void Update()
     {
-        if (_waves[_waveIndex].isWaveOver())
+        Debug.Log(finished);
+        if (_waveIndex < _waves.Length)
         {
-            NextWave();
+            if (_waves[_waveIndex].isWaveOver())
+            {
+                NextWave();
+            }
         }
     }
 
     private IEnumerator StartWave()
     {
         Debug.Log("start wave");
-        if (_waves[_waveIndex] != null)
+
+        if (_waveIndex < _waves.Length)
         {
-            if (_waves[_waveIndex].activationTime != -1)
+            Debug.Log("start wave2");
+            if (_waves[_waveIndex] != null)
             {
-                yield return new WaitForSeconds(_waves[_waveIndex].activationTime);
-                Debug.Log("activate wave " + _waveIndex);
-                _waves[_waveIndex].Activate();
+                Debug.Log("start wave3");
+                if (_waves[_waveIndex].activationTime != -1)
+                {
+                    Debug.Log("start wave4 " + _waveIndex+ " "+ _waves[_waveIndex].activationTime);
+                    yield return new WaitForSeconds(_waves[_waveIndex].activationTime);
+                    Debug.Log("activate wave " + _waveIndex);
+
+                    if (_waveIndex >= _waves.Length)
+                    {
+                        finished = true;
+                    }
+                    else
+                    {
+                        Debug.Log("start wave5");
+                        _waves[_waveIndex].Activate();
+                    }
+                }
             }
+        }
+        else
+        {
+            finished = true;
         }
     }
 }
