@@ -6,8 +6,9 @@ public class EnemySpawner : MonoBehaviour
 {
     private Wave[] _waves;
     public GameObject prefab;
-    private int _waveIndex = -1;
-    private Coroutine _waitCoroutine;
+    private int _waveIndex = 0;
+    private Coroutine _startCoroutine;
+    private IEnumerator _coroutine;
 
     private void Awake()
     {
@@ -19,12 +20,21 @@ public class EnemySpawner : MonoBehaviour
             _waves[i] = transform.GetChild(i).gameObject.GetComponent<Wave>();
         }
 
-        _waitCoroutine = StartCoroutine(NextWaveCoroutine());
+        _coroutine = StartWave();
+
+        StartCoroutine(_coroutine);
+    }
+
+    public void SetWave(int index)
+    {
+        _waveIndex = index;
+        StopCoroutine(_coroutine);
+        StartCoroutine(_coroutine);
     }
 
     public void NextWave()
     {
-        StartCoroutine(NextWaveCoroutine());
+        SetWave(_waveIndex + 1);
     }
 
     private void Update()
@@ -35,9 +45,8 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private IEnumerator NextWaveCoroutine()
+    private IEnumerator StartWave()
     {
-        _waveIndex++;
         if (_waves[_waveIndex] != null)
         {
             if (_waves[_waveIndex].activationTime != -1)
@@ -46,7 +55,5 @@ public class EnemySpawner : MonoBehaviour
             }
             _waves[_waveIndex].Activate();
         }
-
-
     }
 }
