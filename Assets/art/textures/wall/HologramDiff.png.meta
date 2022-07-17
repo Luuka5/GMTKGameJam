@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/art/textures/wall/HologramDiff.png.meta
 guid: b2451b6369b2f0a428f48afb7632a2e0
+=======
+guid: 420ad6736fa97b4448e0e80076f7be81
+>>>>>>> test-5:Assets/art/textures/robot 1/Eyes_Height.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

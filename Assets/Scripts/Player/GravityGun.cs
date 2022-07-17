@@ -43,6 +43,15 @@ public class GravityGun : MonoBehaviour
     {
         ChangeGravGunState(AimOff());
     }
+    public void ChangeSelected(GrabThrowObject newSelected)
+    {
+        selectedObject = newSelected;
+    }
+
+    public void ActivateGrabbing()
+    {
+        ChangeGravGunState(Grab());
+    }
 
     private void Update()
     {
@@ -142,6 +151,8 @@ IEnumerator Grab()
 
         selectedObject.Grab(_holdGrabPoint, _grabSpeed);
 
+
+
         while (true)
         {
             if (CheckRMB())
@@ -178,7 +189,7 @@ IEnumerator Grab()
                 ChangeGravGunState(Throw());
 
             if (CheckRMB())
-                ChangeGravGunState(Release());
+                ChangeGravGunState(ReleasePush());
 
 
 
@@ -231,8 +242,18 @@ IEnumerator Push()
         
     }
 
+    IEnumerator ReleasePush()
+    {
+        CheckForSelected();
+ 
+        selectedObject.Throw(cam.transform.forward * 3 + cam.transform.up * 10);
+        ChangeGravGunState(Release());
+        yield return new WaitForEndOfFrame();
+    }
+
 IEnumerator Release()
     {
+        CheckForSelected();
         _gravGunState = GravityGunStates.Release;
 
         selectedObject.Release();
@@ -254,7 +275,7 @@ private void ChangeGravGunState(IEnumerator enumerator)
 private void CheckForSelected()
     {
         if (selectedObject == null)
-            ChangeGravGunState(Release());
+            ChangeGravGunState(AimOff());
     }
 
  bool CheckLMB()

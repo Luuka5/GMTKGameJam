@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/art/textures/wall/Pillar.png.meta
 guid: 3dfcfd9c912a90e408f344b6d4ee8f6a
+=======
+guid: 15a2479a78c104d4fbeec7cf0b1142c7
+>>>>>>> test-5:Assets/art/textures/robot 1/Eyes_Normal.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

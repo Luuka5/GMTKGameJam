@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/art/textures/wall/Hologram.png.meta
 guid: eced0468b54d08845a94d5bcd0e32e1d
+=======
+guid: 831fef0a2ab01b344942eaf47592c78d
+>>>>>>> test-5:Assets/art/textures/robot 1/Eyes_Base_color.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

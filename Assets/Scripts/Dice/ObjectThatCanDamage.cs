@@ -36,6 +36,29 @@ public class ObjectThatCanDamage : MonoBehaviour
 		return Mathf.CeilToInt(Mathf.Clamp(maxDamage * speed / (maxDamageSpeed - minDamageSpeed), 0, maxDamage));
 	}
 
+	public int GetDamage(int enemyNumber)
+    {
+		switch(_diceCore.ActiveDiceSide)
+        {
+			case 1:
+				if (enemyNumber == 3) return 10;
+				else return 5;
+			case 6:
+				if (enemyNumber == 3) return 10;
+				else return 5;
+			case 2:
+				if (enemyNumber == 2) return 10;
+				else return 5;
+			case 5:
+				if (enemyNumber == 2) return 10;
+				else return 5;
+			case 4:
+				if (enemyNumber == 1) return 10;
+				else return 5;
+			 default: return 10; _diceCore.playerData.playerCore.TakeDamage(-20);
+		}
+    }
+
 	public void OnKill()
     {
 		StartCoroutine(ContinueSpeed(direction*speed));

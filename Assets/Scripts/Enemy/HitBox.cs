@@ -34,12 +34,12 @@ public class HitBox : MonoBehaviour
 			if (angle <= maxAngleToDamage)
 			{
 
+				int _damage = objectDamage.GetDamage(enemyCore.enemyNumber);
+				enemyCore.TakeDamage(_damage);
 
-				enemyCore.TakeDamage(objectDamage.GetDamage());
 
 
-
-				if (enemyCore.GetAliveState() == false)
+				if (enemyCore.GetAliveState() == false && _damage==10)
 				{
 					objectDamage.OnKill();
 				}
