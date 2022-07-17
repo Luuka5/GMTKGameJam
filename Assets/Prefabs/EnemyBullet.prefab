@@ -163,7 +163,7 @@ MonoBehaviour:
   _destroyLayers:
     serializedVersion: 2
     m_Bits: 191
-  _damage: 0
+  _damage: 5
 --- !u!54 &6102136784849916463
 Rigidbody:
   m_ObjectHideFlags: 0
