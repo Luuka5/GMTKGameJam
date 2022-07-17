@@ -21,7 +21,7 @@ public class EnemyRangedController : MonoBehaviour,ICanShoot
 	[SerializeField] Transform aimTransform;
 	IEnumerator burstShootCorutine;
 	IEnumerator autoShootCorutine;
-	[SerializeField] EnemyCore enemyController;
+	[SerializeField] public EnemyCore enemyController;
 
 	bool isShooting = false;
 

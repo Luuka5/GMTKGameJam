@@ -42,6 +42,7 @@ public class RangedEnemyBrain : MonoBehaviour
 	
 	private void Start()
 	{
+		player = enemyRangedController.enemyController.enemySettings.playerData.playerCore.transform;
 		agent.updateRotation = true;
 			distanceToPlayer = GetDistanceToPlayer();
 		

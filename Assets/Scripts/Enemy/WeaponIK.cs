@@ -48,6 +48,7 @@ public class WeaponIK : MonoBehaviour
 		//boneTransforms[i] = animator.GetBoneTransform(humanBones[i].bone);
 
 		enemyCore = GetComponent<EnemyCore>();
+		targetTransform = enemyCore.enemySettings.playerData.playerCore.transform;
     }
 
 	public void ChangeIKState(bool _newState)
