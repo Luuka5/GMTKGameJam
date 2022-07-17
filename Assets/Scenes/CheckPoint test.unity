@@ -5126,6 +5126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveDiceSide: 1
+  playerData: {fileID: 0}
 --- !u!114 &7104631953898474488
 MonoBehaviour:
   m_ObjectHideFlags: 0
