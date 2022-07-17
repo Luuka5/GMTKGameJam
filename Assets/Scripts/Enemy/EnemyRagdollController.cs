@@ -38,7 +38,7 @@ public class EnemyRagdollController : MonoBehaviour, ICanDie
 	{
 		animator.enabled = false;
 		setRigidbodyState(true);
-		
+		setParentColliderState(false);
 	}
 
 	

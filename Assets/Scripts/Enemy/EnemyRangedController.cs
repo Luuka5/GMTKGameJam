@@ -30,6 +30,7 @@ public class EnemyRangedController : MonoBehaviour,ICanShoot
 		burstShootCorutine = BurstShoot(burstShotsAmount);
 		autoShootCorutine = AutoShoot();
 
+		targetTransform = enemyController.enemySettings.playerData.playerCore.transform;
 
 		StartCoroutine(AutoShoot());
 	}

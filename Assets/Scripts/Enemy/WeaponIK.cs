@@ -18,7 +18,7 @@ public class WeaponIK : MonoBehaviour
 
 	[SerializeField] Transform targetTransform;
 	[SerializeField] Transform aimTransform;
-
+	
 
 	[SerializeField] float iterations;
 	[Range(0, 1)]
@@ -31,6 +31,7 @@ public class WeaponIK : MonoBehaviour
 	[SerializeField] float distanceLimit = 1.5f;
 	[SerializeField] float rotateSpeed = 1f;
 
+	EnemyCore enemyCore;
 
 	Transform[] boneTransforms;
 
@@ -42,9 +43,9 @@ public class WeaponIK : MonoBehaviour
 		//boneTransforms = new Transform[humanBones.Length];
 
 		//for (int i = 0; i<boneTransforms.Length; i++)
-			//boneTransforms[i] = animator.GetBoneTransform(humanBones[i].bone);
+		//boneTransforms[i] = animator.GetBoneTransform(humanBones[i].bone);
 
-
+		enemyCore = GetComponent<EnemyCore>();
     }
 
 	Vector3 GetTargetPosition()
@@ -80,6 +81,7 @@ public class WeaponIK : MonoBehaviour
 	// Update is called once per frame
 	void LateUpdate()
     {
+		if (!enemyCore.GetAliveState()) return;
 
 
 		if (aimTransform == null) return;

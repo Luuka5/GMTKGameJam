@@ -21,6 +21,7 @@ public class ObjectThatCanDamage : MonoBehaviour
     private void Awake()
     {
 		_rigidbody = GetComponent<Rigidbody>();
+		_diceCore = GetComponent<DiceCore>();
     }
     private void LateUpdate()
 	{
