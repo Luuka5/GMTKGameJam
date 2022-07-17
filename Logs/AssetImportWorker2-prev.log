@@ -15,7 +15,7 @@ C:/Users/touko/Documents/UnityProjects/GMTKGameJam
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-52952
+64457
 Successfully changed project path to: C:/Users/touko/Documents/UnityProjects/GMTKGameJam
 C:/Users/touko/Documents/UnityProjects/GMTKGameJam
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/touko/Documents/UnityProjects/GMTKGameJam
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 141.25 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 115.02 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.6f1 (7da38d85baf6)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity 2021.3.6f1/Editor/Data/Resources/UnitySubsystems
@@ -63,75 +63,75 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity 2021.3.6f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity 2021.3.6f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity 2021.3.6f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56048
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56828
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity 2021.3.6f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.007366 seconds.
+Registered in 0.007439 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 114.40 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 114.41 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.796 seconds
+- Completed reload, in  0.747 seconds
 Domain Reload Profiling:
-	ReloadAssembly (797ms)
-		BeginReloadAssembly (130ms)
+	ReloadAssembly (747ms)
+		BeginReloadAssembly (132ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (517ms)
-			LoadAssemblies (115ms)
+		EndReloadAssembly (471ms)
+			LoadAssemblies (118ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (105ms)
+			SetupTypeCache (91ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (30ms)
-			SetupLoadedEditorAssemblies (304ms)
+			RebuildScriptCaches (24ms)
+			SetupLoadedEditorAssemblies (285ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (114ms)
+				RefreshPlugins (115ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (134ms)
-				ProcessInitializeOnLoadMethodAttributes (47ms)
+				ProcessInitializeOnLoadAttributes (120ms)
+				ProcessInitializeOnLoadMethodAttributes (42ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.015332 seconds.
+Registered in 0.014221 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\touko\Documents\UnityProjects\GMTKGameJam\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\touko\Documents\UnityProjects\GMTKGameJam\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 107.31 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 107.82 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.441 seconds
+- Completed reload, in  1.404 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1442ms)
-		BeginReloadAssembly (190ms)
+	ReloadAssembly (1405ms)
+		BeginReloadAssembly (168ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (5ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (20ms)
-		EndReloadAssembly (1096ms)
-			LoadAssemblies (159ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (1087ms)
+			LoadAssemblies (158ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (270ms)
+			SetupTypeCache (269ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (54ms)
-			SetupLoadedEditorAssemblies (605ms)
+			RebuildScriptCaches (50ms)
+			SetupLoadedEditorAssemblies (592ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (4ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (107ms)
-				BeforeProcessingInitializeOnLoad (144ms)
-				ProcessInitializeOnLoadAttributes (243ms)
-				ProcessInitializeOnLoadMethodAttributes (73ms)
+				RefreshPlugins (108ms)
+				BeforeProcessingInitializeOnLoad (141ms)
+				ProcessInitializeOnLoadAttributes (233ms)
+				ProcessInitializeOnLoadMethodAttributes (72ms)
 				AfterProcessingInitializeOnLoad (33ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -140,12 +140,12 @@ Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
 Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.86 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.39 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5161 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 37 unused Assets / (0.7 MB). Loaded Objects now: 5610.
-Memory consumption went from 201.2 MB to 200.4 MB.
-Total: 3.535400 ms (FindLiveObjects: 0.443100 ms CreateObjectMapping: 0.151000 ms MarkObjects: 2.622800 ms  DeleteObjects: 0.317200 ms)
+Unloading 5162 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 37 unused Assets / (0.7 MB). Loaded Objects now: 5611.
+Memory consumption went from 201.3 MB to 200.6 MB.
+Total: 4.211500 ms (FindLiveObjects: 0.554800 ms CreateObjectMapping: 0.201200 ms MarkObjects: 3.121000 ms  DeleteObjects: 0.333100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -159,19 +159,509 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 31749.534923 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Shaders/2D
-  artifactKey: Guid(e674d0c2643d94245b5da6cc11dfe0ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Shaders/2D using Guid(e674d0c2643d94245b5da6cc11dfe0ec) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f51110b9b66b616d9d374b7bb5fdea01') in 0.016521 seconds 
+  Time since last request: 45031.887161 seconds.
+  path: Assets/art/exports/How to find faces with more than 4 corners_ - Support _ Modeling - Blender Artists Community_files/20.png
+  artifactKey: Guid(841717ca346abd5459277f7eb9fe4253) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/exports/How to find faces with more than 4 corners_ - Support _ Modeling - Blender Artists Community_files/20.png using Guid(841717ca346abd5459277f7eb9fe4253) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.533842 seconds  code(4) message(Build asset version error: assets/art/exports/how to find faces with more than 4 corners_ - support _ modeling - blender artists community_files/20.png in SourceAssetDB has modification time of '2022-07-17T08:41:40.5179611Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff70d87930d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff70d87ffe9 (Unity) StackWalker::ShowCallstack
+0x00007ff70e7ed613 (Unity) GetStacktrace
+0x00007ff70eb86c84 (Unity) GetAssetHashAndValidate
+0x00007ff70eb824b8 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff70eb8048d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff70eb083a8 (Unity) CreateAssetVersionBuilder
+0x00007ff70eb0ef03 (Unity) ImportToObjects
+0x00007ff70eb0dc33 (Unity) ImportAsset
+0x00007ff70eb305e2 (Unity) AssetImportWorker::Import
+0x00007ff70eb958a4 (Unity) <lambda_28a9dd63239995ea16631cf66756f7a6>::operator()
+0x00007ff70ebd6622 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff70ebc2cae (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff70ebc4914 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff70ebd4c9e (Unity) IOService::Run
+0x00007ff70eba822f (Unity) AssetImportWorkerClient::Run
+0x00007ff70eb72ad3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff70eb72b5b (Unity) RunAssetImporterV2
+0x00007ff70e39c564 (Unity) Application::InitializeProject
+0x00007ff70e7f7d58 (Unity) WinMain
+0x00007ff70fb7b42e (Unity) __scrt_common_main_seh
+0x00007ffe23be7034 (KERNEL32) BaseThreadInitThunk
+0x00007ffe24ac2651 (ntdll) RtlUserThreadStart
+)
+  ERROR: Build asset version error: assets/art/exports/how to find faces with more than 4 corners_ - support _ modeling - blender artists community_files/20.png in SourceAssetDB has modification time of '2022-07-17T08:41:40.5179611Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff70d87930d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff70d87ffe9 (Unity) StackWalker::ShowCallstack
+0x00007ff70e7ed613 (Unity) GetStacktrace
+0x00007ff70eb86c84 (Unity) GetAssetHashAndValidate
+0x00007ff70eb824b8 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff70eb8048d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff70eb083a8 (Unity) CreateAssetVersionBuilder
+0x00007ff70eb0ef03 (Unity) ImportToObjects
+0x00007ff70eb0dc33 (Unity) ImportAsset
+0x00007ff70eb305e2 (Unity) AssetImportWorker::Import
+0x00007ff70eb958a4 (Unity) <lambda_28a9dd63239995ea16631cf66756f7a6>::operator()
+0x00007ff70ebd6622 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff70ebc2cae (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff70ebc4914 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff70ebd4c9e (Unity) IOService::Run
+0x00007ff70eba822f (Unity) AssetImportWorkerClient::Run
+0x00007ff70eb72ad3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff70eb72b5b (Unity) RunAssetImporterV2
+0x00007ff70e39c564 (Unity) Application::InitializeProject
+0x00007ff70e7f7d58 (Unity) WinMain
+0x00007ff70fb7b42e (Unity) __scrt_common_main_seh
+0x00007ffe23be7034 (KERNEL32) BaseThreadInitThunk
+0x00007ffe24ac2651 (ntdll) RtlUserThreadStart
+
 ========================================================================
 Received Import Request.
-  Time since last request: 0.932476 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Shaders/AutodeskInteractive
-  artifactKey: Guid(ffac7c69f2faf9345b5b32ae0580e2e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Shaders/AutodeskInteractive using Guid(ffac7c69f2faf9345b5b32ae0580e2e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db9f9b6eb6c8923664b53a9df17dd215') in 0.007064 seconds 
+  Time since last request: 0.000040 seconds.
+  path: Assets/art/textures/robot/Eyes_Base_color.png
+  artifactKey: Guid(40ff4855e2c502a439c44b32c6abc088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/Eyes_Base_color.png using Guid(40ff4855e2c502a439c44b32c6abc088) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c7c5d960fa49f7e6e6b59c710942579') in 0.023148 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.485390 seconds.
-  path: Packages/com.unity.render-pipelines.universal/Shaders/Debug
-  artifactKey: Guid(83e12e3399064822abd3e69798ce3053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Packages/com.unity.render-pipelines.universal/Shaders/Debug using Guid(83e12e3399064822abd3e69798ce3053) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1e04af51030fe772ea9ad2671c63f4f') in 0.006906 seconds 
+  Time since last request: 0.000037 seconds.
+  path: Assets/art/exports/How to find faces with more than 4 corners_ - Support _ Modeling - Blender Artists Community_files/395a06566a00e1bd087e3036cc764a7f69c03ab6.png
+  artifactKey: Guid(b193f8c3ceffe864abd6f8156ed6b525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/exports/How to find faces with more than 4 corners_ - Support _ Modeling - Blender Artists Community_files/395a06566a00e1bd087e3036cc764a7f69c03ab6.png using Guid(b193f8c3ceffe864abd6f8156ed6b525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.014804 seconds  code(4) message(Build asset version error: assets/art/exports/how to find faces with more than 4 corners_ - support _ modeling - blender artists community_files/395a06566a00e1bd087e3036cc764a7f69c03ab6.png in SourceAssetDB has modification time of '2022-07-17T08:41:25.2669574Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff70d87930d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff70d87ffe9 (Unity) StackWalker::ShowCallstack
+0x00007ff70e7ed613 (Unity) GetStacktrace
+0x00007ff70eb86c84 (Unity) GetAssetHashAndValidate
+0x00007ff70eb824b8 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff70eb8048d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff70eb083a8 (Unity) CreateAssetVersionBuilder
+0x00007ff70eb0ef03 (Unity) ImportToObjects
+0x00007ff70eb0dc33 (Unity) ImportAsset
+0x00007ff70eb305e2 (Unity) AssetImportWorker::Import
+0x00007ff70eb958a4 (Unity) <lambda_28a9dd63239995ea16631cf66756f7a6>::operator()
+0x00007ff70ebd6622 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff70ebc2cae (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff70ebc4914 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff70ebd4c9e (Unity) IOService::Run
+0x00007ff70eba822f (Unity) AssetImportWorkerClient::Run
+0x00007ff70eb72ad3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff70eb72b5b (Unity) RunAssetImporterV2
+0x00007ff70e39c564 (Unity) Application::InitializeProject
+0x00007ff70e7f7d58 (Unity) WinMain
+0x00007ff70fb7b42e (Unity) __scrt_common_main_seh
+0x00007ffe23be7034 (KERNEL32) BaseThreadInitThunk
+0x00007ffe24ac2651 (ntdll) RtlUserThreadStart
+)
+  ERROR: Build asset version error: assets/art/exports/how to find faces with more than 4 corners_ - support _ modeling - blender artists community_files/395a06566a00e1bd087e3036cc764a7f69c03ab6.png in SourceAssetDB has modification time of '2022-07-17T08:41:25.2669574Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff70d87930d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff70d87ffe9 (Unity) StackWalker::ShowCallstack
+0x00007ff70e7ed613 (Unity) GetStacktrace
+0x00007ff70eb86c84 (Unity) GetAssetHashAndValidate
+0x00007ff70eb824b8 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff70eb8048d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff70eb083a8 (Unity) CreateAssetVersionBuilder
+0x00007ff70eb0ef03 (Unity) ImportToObjects
+0x00007ff70eb0dc33 (Unity) ImportAsset
+0x00007ff70eb305e2 (Unity) AssetImportWorker::Import
+0x00007ff70eb958a4 (Unity) <lambda_28a9dd63239995ea16631cf66756f7a6>::operator()
+0x00007ff70ebd6622 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff70ebc2cae (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff70ebc4914 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff70ebd4c9e (Unity) IOService::Run
+0x00007ff70eba822f (Unity) AssetImportWorkerClient::Run
+0x00007ff70eb72ad3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff70eb72b5b (Unity) RunAssetImporterV2
+0x00007ff70e39c564 (Unity) Application::InitializeProject
+0x00007ff70e7f7d58 (Unity) WinMain
+0x00007ff70fb7b42e (Unity) __scrt_common_main_seh
+0x00007ffe23be7034 (KERNEL32) BaseThreadInitThunk
+0x00007ffe24ac2651 (ntdll) RtlUserThreadStart
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/art/exports/How to find faces with more than 4 corners_ - Support _ Modeling - Blender Artists Community_files/623671_2.png
+  artifactKey: Guid(6e5c677460656b54d871e7d02943d4c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/exports/How to find faces with more than 4 corners_ - Support _ Modeling - Blender Artists Community_files/623671_2.png using Guid(6e5c677460656b54d871e7d02943d4c2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.014004 seconds  code(4) message(Build asset version error: assets/art/exports/how to find faces with more than 4 corners_ - support _ modeling - blender artists community_files/623671_2.png in SourceAssetDB has modification time of '2022-07-17T08:41:40.6249622Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff70d87930d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff70d87ffe9 (Unity) StackWalker::ShowCallstack
+0x00007ff70e7ed613 (Unity) GetStacktrace
+0x00007ff70eb86c84 (Unity) GetAssetHashAndValidate
+0x00007ff70eb824b8 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff70eb8048d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff70eb083a8 (Unity) CreateAssetVersionBuilder
+0x00007ff70eb0ef03 (Unity) ImportToObjects
+0x00007ff70eb0dc33 (Unity) ImportAsset
+0x00007ff70eb305e2 (Unity) AssetImportWorker::Import
+0x00007ff70eb958a4 (Unity) <lambda_28a9dd63239995ea16631cf66756f7a6>::operator()
+0x00007ff70ebd6622 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff70ebc2cae (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff70ebc4914 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff70ebd4c9e (Unity) IOService::Run
+0x00007ff70eba822f (Unity) AssetImportWorkerClient::Run
+0x00007ff70eb72ad3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff70eb72b5b (Unity) RunAssetImporterV2
+0x00007ff70e39c564 (Unity) Application::InitializeProject
+0x00007ff70e7f7d58 (Unity) WinMain
+0x00007ff70fb7b42e (Unity) __scrt_common_main_seh
+0x00007ffe23be7034 (KERNEL32) BaseThreadInitThunk
+0x00007ffe24ac2651 (ntdll) RtlUserThreadStart
+)
+  ERROR: Build asset version error: assets/art/exports/how to find faces with more than 4 corners_ - support _ modeling - blender artists community_files/623671_2.png in SourceAssetDB has modification time of '2022-07-17T08:41:40.6249622Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff70d87930d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff70d87ffe9 (Unity) StackWalker::ShowCallstack
+0x00007ff70e7ed613 (Unity) GetStacktrace
+0x00007ff70eb86c84 (Unity) GetAssetHashAndValidate
+0x00007ff70eb824b8 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff70eb8048d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff70eb083a8 (Unity) CreateAssetVersionBuilder
+0x00007ff70eb0ef03 (Unity) ImportToObjects
+0x00007ff70eb0dc33 (Unity) ImportAsset
+0x00007ff70eb305e2 (Unity) AssetImportWorker::Import
+0x00007ff70eb958a4 (Unity) <lambda_28a9dd63239995ea16631cf66756f7a6>::operator()
+0x00007ff70ebd6622 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff70ebc2cae (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff70ebc4914 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff70ebd4c9e (Unity) IOService::Run
+0x00007ff70eba822f (Unity) AssetImportWorkerClient::Run
+0x00007ff70eb72ad3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff70eb72b5b (Unity) RunAssetImporterV2
+0x00007ff70e39c564 (Unity) Application::InitializeProject
+0x00007ff70e7f7d58 (Unity) WinMain
+0x00007ff70fb7b42e (Unity) __scrt_common_main_seh
+0x00007ffe23be7034 (KERNEL32) BaseThreadInitThunk
+0x00007ffe24ac2651 (ntdll) RtlUserThreadStart
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/art/textures/jeep/car_jeep_ren.jpg
+  artifactKey: Guid(2b193c063174ceb4ba8f166c84b68d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/jeep/car_jeep_ren.jpg using Guid(2b193c063174ceb4ba8f166c84b68d4d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0842ef366f568f5580b3ec6599d635d4') in 0.020909 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/art/exports/How to find faces with more than 4 corners_ - Support _ Modeling - Blender Artists Community_files/12611_2(1).png
+  artifactKey: Guid(3bb7d96310bbb6244bd39950907c05b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/exports/How to find faces with more than 4 corners_ - Support _ Modeling - Blender Artists Community_files/12611_2(1).png using Guid(3bb7d96310bbb6244bd39950907c05b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.013441 seconds  code(4) message(Build asset version error: assets/art/exports/how to find faces with more than 4 corners_ - support _ modeling - blender artists community_files/12611_2(1).png in SourceAssetDB has modification time of '2022-07-17T08:41:41.1574991Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff70d87930d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff70d87ffe9 (Unity) StackWalker::ShowCallstack
+0x00007ff70e7ed613 (Unity) GetStacktrace
+0x00007ff70eb86c84 (Unity) GetAssetHashAndValidate
+0x00007ff70eb824b8 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff70eb8048d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff70eb083a8 (Unity) CreateAssetVersionBuilder
+0x00007ff70eb0ef03 (Unity) ImportToObjects
+0x00007ff70eb0dc33 (Unity) ImportAsset
+0x00007ff70eb305e2 (Unity) AssetImportWorker::Import
+0x00007ff70eb958a4 (Unity) <lambda_28a9dd63239995ea16631cf66756f7a6>::operator()
+0x00007ff70ebd6622 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff70ebc2cae (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff70ebc4914 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff70ebd4c9e (Unity) IOService::Run
+0x00007ff70eba822f (Unity) AssetImportWorkerClient::Run
+0x00007ff70eb72ad3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff70eb72b5b (Unity) RunAssetImporterV2
+0x00007ff70e39c564 (Unity) Application::InitializeProject
+0x00007ff70e7f7d58 (Unity) WinMain
+0x00007ff70fb7b42e (Unity) __scrt_common_main_seh
+0x00007ffe23be7034 (KERNEL32) BaseThreadInitThunk
+0x00007ffe24ac2651 (ntdll) RtlUserThreadStart
+)
+  ERROR: Build asset version error: assets/art/exports/how to find faces with more than 4 corners_ - support _ modeling - blender artists community_files/12611_2(1).png in SourceAssetDB has modification time of '2022-07-17T08:41:41.1574991Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff70d87930d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff70d87ffe9 (Unity) StackWalker::ShowCallstack
+0x00007ff70e7ed613 (Unity) GetStacktrace
+0x00007ff70eb86c84 (Unity) GetAssetHashAndValidate
+0x00007ff70eb824b8 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff70eb8048d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff70eb083a8 (Unity) CreateAssetVersionBuilder
+0x00007ff70eb0ef03 (Unity) ImportToObjects
+0x00007ff70eb0dc33 (Unity) ImportAsset
+0x00007ff70eb305e2 (Unity) AssetImportWorker::Import
+0x00007ff70eb958a4 (Unity) <lambda_28a9dd63239995ea16631cf66756f7a6>::operator()
+0x00007ff70ebd6622 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff70ebc2cae (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff70ebc4914 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff70ebd4c9e (Unity) IOService::Run
+0x00007ff70eba822f (Unity) AssetImportWorkerClient::Run
+0x00007ff70eb72ad3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff70eb72b5b (Unity) RunAssetImporterV2
+0x00007ff70e39c564 (Unity) Application::InitializeProject
+0x00007ff70e7f7d58 (Unity) WinMain
+0x00007ff70fb7b42e (Unity) __scrt_common_main_seh
+0x00007ffe23be7034 (KERNEL32) BaseThreadInitThunk
+0x00007ffe24ac2651 (ntdll) RtlUserThreadStart
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.680394 seconds.
+  path: Assets/art/textures/robot/Eyes_Height.png
+  artifactKey: Guid(020815a693087bc478a3380a518bed45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/Eyes_Height.png using Guid(020815a693087bc478a3380a518bed45) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '96eb804754ebf4eb5a0c04ff58a42306') in 0.033912 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/art/textures/robot/Eyes_Normal_DirectX.png
+  artifactKey: Guid(37da2931536990b499c2d59fd470d962) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/Eyes_Normal_DirectX.png using Guid(37da2931536990b499c2d59fd470d962) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b33ddad63fc3fea463d78a400f6402f3') in 0.021170 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/art/textures/M45Car/M45_diffuse_blue.png
+  artifactKey: Guid(06857d0e18ab35b45b2ba34aed7b2181) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/M45Car/M45_diffuse_blue.png using Guid(06857d0e18ab35b45b2ba34aed7b2181) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6b766768aa2c8b18aee53732976be74') in 0.020681 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/art/exports/How to find faces with more than 4 corners_ - Support _ Modeling - Blender Artists Community_files/Header-1-4-110x96.jpg
+  artifactKey: Guid(917ce66206d832e41b5bb9536368a11f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/exports/How to find faces with more than 4 corners_ - Support _ Modeling - Blender Artists Community_files/Header-1-4-110x96.jpg using Guid(917ce66206d832e41b5bb9536368a11f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.016804 seconds  code(4) message(Build asset version error: assets/art/exports/how to find faces with more than 4 corners_ - support _ modeling - blender artists community_files/header-1-4-110x96.jpg in SourceAssetDB has modification time of '2022-07-17T08:41:36.2739292Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff70d87930d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff70d87ffe9 (Unity) StackWalker::ShowCallstack
+0x00007ff70e7ed613 (Unity) GetStacktrace
+0x00007ff70eb86c84 (Unity) GetAssetHashAndValidate
+0x00007ff70eb824b8 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff70eb8048d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff70eb083a8 (Unity) CreateAssetVersionBuilder
+0x00007ff70eb0ef03 (Unity) ImportToObjects
+0x00007ff70eb0dc33 (Unity) ImportAsset
+0x00007ff70eb305e2 (Unity) AssetImportWorker::Import
+0x00007ff70eb958a4 (Unity) <lambda_28a9dd63239995ea16631cf66756f7a6>::operator()
+0x00007ff70ebd6622 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff70ebc2cae (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff70ebc4914 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff70ebd4c9e (Unity) IOService::Run
+0x00007ff70eba822f (Unity) AssetImportWorkerClient::Run
+0x00007ff70eb72ad3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff70eb72b5b (Unity) RunAssetImporterV2
+0x00007ff70e39c564 (Unity) Application::InitializeProject
+0x00007ff70e7f7d58 (Unity) WinMain
+0x00007ff70fb7b42e (Unity) __scrt_common_main_seh
+0x00007ffe23be7034 (KERNEL32) BaseThreadInitThunk
+0x00007ffe24ac2651 (ntdll) RtlUserThreadStart
+)
+  ERROR: Build asset version error: assets/art/exports/how to find faces with more than 4 corners_ - support _ modeling - blender artists community_files/header-1-4-110x96.jpg in SourceAssetDB has modification time of '2022-07-17T08:41:36.2739292Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff70d87930d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff70d87ffe9 (Unity) StackWalker::ShowCallstack
+0x00007ff70e7ed613 (Unity) GetStacktrace
+0x00007ff70eb86c84 (Unity) GetAssetHashAndValidate
+0x00007ff70eb824b8 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff70eb8048d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff70eb083a8 (Unity) CreateAssetVersionBuilder
+0x00007ff70eb0ef03 (Unity) ImportToObjects
+0x00007ff70eb0dc33 (Unity) ImportAsset
+0x00007ff70eb305e2 (Unity) AssetImportWorker::Import
+0x00007ff70eb958a4 (Unity) <lambda_28a9dd63239995ea16631cf66756f7a6>::operator()
+0x00007ff70ebd6622 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff70ebc2cae (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff70ebc4914 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff70ebd4c9e (Unity) IOService::Run
+0x00007ff70eba822f (Unity) AssetImportWorkerClient::Run
+0x00007ff70eb72ad3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff70eb72b5b (Unity) RunAssetImporterV2
+0x00007ff70e39c564 (Unity) Application::InitializeProject
+0x00007ff70e7f7d58 (Unity) WinMain
+0x00007ff70fb7b42e (Unity) __scrt_common_main_seh
+0x00007ffe23be7034 (KERNEL32) BaseThreadInitThunk
+0x00007ffe24ac2651 (ntdll) RtlUserThreadStart
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/art/textures/M45Car/M45_normal.png
+  artifactKey: Guid(bf47e346399416e45907ce8dcf48cebb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/M45Car/M45_normal.png using Guid(bf47e346399416e45907ce8dcf48cebb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '43a5476b8b99f0223b90edaae77b0a77') in 0.059185 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/art/textures/M45Car/M45_SI.png
+  artifactKey: Guid(b9e709f2bf555ee4d8faf14cf1df3240) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/M45Car/M45_SI.png using Guid(b9e709f2bf555ee4d8faf14cf1df3240) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5f1c4bb4c019897a42530a1423508333') in 0.021778 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/art/textures/robot/Material_Height.png
+  artifactKey: Guid(a36033c386881864e8df330ca57882b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/Material_Height.png using Guid(a36033c386881864e8df330ca57882b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '41eaa4eac3507d85c85ec6f324816ebf') in 0.019891 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/AsseetStore/FreeNightSky/Textures/nightsky1_left.png
+  artifactKey: Guid(3a9af5d0bfef716468800c6f0396a0c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AsseetStore/FreeNightSky/Textures/nightsky1_left.png using Guid(3a9af5d0bfef716468800c6f0396a0c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9ccf48910ca46ea04c37b863dc26431') in 0.021468 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/art/textures/robot/robiotmetal_Height.png
+  artifactKey: Guid(016837e07fc261145a4e89f0afb11328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/robiotmetal_Height.png using Guid(016837e07fc261145a4e89f0afb11328) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e452115d988b986270d11e43491b7bde') in 0.020950 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/AsseetStore/FreeNightSky/Textures/nightsky1_up.png
+  artifactKey: Guid(5d6ababd5b9f2054389b09e11efa8f93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AsseetStore/FreeNightSky/Textures/nightsky1_up.png using Guid(5d6ababd5b9f2054389b09e11efa8f93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fe7c6c6e5ed3dd63c8e2172e21c19076') in 0.023692 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/art/textures/robot/robotInternals_Base_color.png
+  artifactKey: Guid(d57e73e7f3472f04c804c12c345b3d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/robotInternals_Base_color.png using Guid(d57e73e7f3472f04c804c12c345b3d6f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f082d46544176e5f9fa6049aff568c10') in 0.021216 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/art/textures/robot/robiotmetal_Metallic.png
+  artifactKey: Guid(75d0676372e6879408a183584d56f5ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/robiotmetal_Metallic.png using Guid(75d0676372e6879408a183584d56f5ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27f4c0f8c0ba5e25cddda653cceb56c5') in 0.021460 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/AsseetStore/FreeNightSky/Textures/nightsky2_back.png
+  artifactKey: Guid(a6d0619a7d443a3419dc673e3afd916a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AsseetStore/FreeNightSky/Textures/nightsky2_back.png using Guid(a6d0619a7d443a3419dc673e3afd916a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e030b21dfd3761f3c7fd5035add808aa') in 0.019122 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/AsseetStore/FreeNightSky/Textures/nightsky2_left.png
+  artifactKey: Guid(3ab08f7569fbbe74bb83a2ced0095581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AsseetStore/FreeNightSky/Textures/nightsky2_left.png using Guid(3ab08f7569fbbe74bb83a2ced0095581) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '73c0349cb505d2ec3f1f065bd8c94bd3') in 0.022542 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/art/exports/How to find faces with more than 4 corners_ - Support _ Modeling - Blender Artists Community_files/skel_thumb_BN-110x96.jpg
+  artifactKey: Guid(a1e7bb1a1566f7a4cba64867c09126cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/exports/How to find faces with more than 4 corners_ - Support _ Modeling - Blender Artists Community_files/skel_thumb_BN-110x96.jpg using Guid(a1e7bb1a1566f7a4cba64867c09126cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '00000000000000000000000000000000') in 0.014106 seconds  code(4) message(Build asset version error: assets/art/exports/how to find faces with more than 4 corners_ - support _ modeling - blender artists community_files/skel_thumb_bn-110x96.jpg in SourceAssetDB has modification time of '2022-07-17T08:41:28.1889704Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff70d87930d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff70d87ffe9 (Unity) StackWalker::ShowCallstack
+0x00007ff70e7ed613 (Unity) GetStacktrace
+0x00007ff70eb86c84 (Unity) GetAssetHashAndValidate
+0x00007ff70eb824b8 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff70eb8048d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff70eb083a8 (Unity) CreateAssetVersionBuilder
+0x00007ff70eb0ef03 (Unity) ImportToObjects
+0x00007ff70eb0dc33 (Unity) ImportAsset
+0x00007ff70eb305e2 (Unity) AssetImportWorker::Import
+0x00007ff70eb958a4 (Unity) <lambda_28a9dd63239995ea16631cf66756f7a6>::operator()
+0x00007ff70ebd6622 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff70ebc2cae (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff70ebc4914 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff70ebd4c9e (Unity) IOService::Run
+0x00007ff70eba822f (Unity) AssetImportWorkerClient::Run
+0x00007ff70eb72ad3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff70eb72b5b (Unity) RunAssetImporterV2
+0x00007ff70e39c564 (Unity) Application::InitializeProject
+0x00007ff70e7f7d58 (Unity) WinMain
+0x00007ff70fb7b42e (Unity) __scrt_common_main_seh
+0x00007ffe23be7034 (KERNEL32) BaseThreadInitThunk
+0x00007ffe24ac2651 (ntdll) RtlUserThreadStart
+)
+  ERROR: Build asset version error: assets/art/exports/how to find faces with more than 4 corners_ - support _ modeling - blender artists community_files/skel_thumb_bn-110x96.jpg in SourceAssetDB has modification time of '2022-07-17T08:41:28.1889704Z' while content on disk has modification time of '0001-01-01T00:00:00Z' with error code 2
+Stacktrace:
+0x00007ff70d87930d (Unity) StackWalker::GetCurrentCallstack
+0x00007ff70d87ffe9 (Unity) StackWalker::ShowCallstack
+0x00007ff70e7ed613 (Unity) GetStacktrace
+0x00007ff70eb86c84 (Unity) GetAssetHashAndValidate
+0x00007ff70eb824b8 (Unity) AssetVersionBuilder::BuildHashOfSourceAssetArray
+0x00007ff70eb8048d (Unity) AssetVersionBuilder::BuildAssetVersion
+0x00007ff70eb083a8 (Unity) CreateAssetVersionBuilder
+0x00007ff70eb0ef03 (Unity) ImportToObjects
+0x00007ff70eb0dc33 (Unity) ImportAsset
+0x00007ff70eb305e2 (Unity) AssetImportWorker::Import
+0x00007ff70eb958a4 (Unity) <lambda_28a9dd63239995ea16631cf66756f7a6>::operator()
+0x00007ff70ebd6622 (Unity) asio::detail::completion_handler<core::mutable_function<void __cdecl(void)>,asio::io_context::basic_executor_type<std::allocator<void>,0> >::do_complete
+0x00007ff70ebc2cae (Unity) asio::detail::win_iocp_io_context::do_one
+0x00007ff70ebc4914 (Unity) asio::detail::win_iocp_io_context::run
+0x00007ff70ebd4c9e (Unity) IOService::Run
+0x00007ff70eba822f (Unity) AssetImportWorkerClient::Run
+0x00007ff70eb72ad3 (Unity) RunAssetImportWorkerClientV2
+0x00007ff70eb72b5b (Unity) RunAssetImporterV2
+0x00007ff70e39c564 (Unity) Application::InitializeProject
+0x00007ff70e7f7d58 (Unity) WinMain
+0x00007ff70fb7b42e (Unity) __scrt_common_main_seh
+0x00007ffe23be7034 (KERNEL32) BaseThreadInitThunk
+0x00007ffe24ac2651 (ntdll) RtlUserThreadStart
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/AsseetStore/UrbanNightSky/Textures/UrbanNightSky_Back.png
+  artifactKey: Guid(6ef94ae4b0007cd438b483cd250be993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AsseetStore/UrbanNightSky/Textures/UrbanNightSky_Back.png using Guid(6ef94ae4b0007cd438b483cd250be993) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70644b2a40c13386564af0ea48348306') in 0.018780 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/AsseetStore/UrbanNightSky/Textures/UrbanNightSky_Right.png
+  artifactKey: Guid(a56b67fd5c6c1e74dbce262d25768be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AsseetStore/UrbanNightSky/Textures/UrbanNightSky_Right.png using Guid(a56b67fd5c6c1e74dbce262d25768be5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb5b1f5a731237a0a8de1c6dfd005a67') in 0.020177 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/art/textures/robot/wire_Metallic.png
+  artifactKey: Guid(cf4c758755aeb7d4b89d291f4166d2d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/wire_Metallic.png using Guid(cf4c758755aeb7d4b89d291f4166d2d0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db3e17ab314ff482963c877ea6ba692c') in 0.021573 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/art/textures/robot/wire_Normal_DirectX.png
+  artifactKey: Guid(8f550106faf24c94ab6f9e99f754a1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/wire_Normal_DirectX.png using Guid(8f550106faf24c94ab6f9e99f754a1ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4c4cf5b80c7450760a48ee03ecb0c7c') in 0.020626 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/AsseetStore/UrbanNightSky/Textures/UrbanNightSky_Left.png
+  artifactKey: Guid(18d870738208882428fe2062a93004e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AsseetStore/UrbanNightSky/Textures/UrbanNightSky_Left.png using Guid(18d870738208882428fe2062a93004e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6bae1b5f285ad079ac90d4e7b9ac52aa') in 0.018568 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.602413 seconds.
+  path: Assets/art/textures/robot/shinyMetal_Base_color.png
+  artifactKey: Guid(e31837487a86fb147826b4a2cddb14c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/shinyMetal_Base_color.png using Guid(e31837487a86fb147826b4a2cddb14c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3f285062c7b3d214bd8d60f50f78f6de') in 0.019357 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/art/textures/robot/shinyMetal_Normal.png
+  artifactKey: Guid(7dd7a51904e1f6646b24f015f14b6290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/shinyMetal_Normal.png using Guid(7dd7a51904e1f6646b24f015f14b6290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72b069a84cfd90c97adafaf97e14e8ac') in 0.019464 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/art/textures/robot/robotInternals_Normal.png
+  artifactKey: Guid(65610a7698cd52e48a72821ba0ca5290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/robotInternals_Normal.png using Guid(65610a7698cd52e48a72821ba0ca5290) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '642f42e28ba963f46964bbdd7ebf13ab') in 0.024630 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.082964 seconds.
+  path: Assets/art/textures/robot/Material_Metallic.png
+  artifactKey: Guid(68f9f92fda1969749969bf3df20885a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/Material_Metallic.png using Guid(68f9f92fda1969749969bf3df20885a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '752c37d065f172506b7724b849c54299') in 0.018043 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.002200 seconds.
+  path: Assets/art/textures/robot/Material_Normal_OpenGL.png
+  artifactKey: Guid(a0ceedc924cea1e419ab5392d82fd414) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot/Material_Normal_OpenGL.png using Guid(a0ceedc924cea1e419ab5392d82fd414) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7efc597ffa893234c10798e4d15dc7a') in 0.017327 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/AsseetStore/FreeNightSky/Textures/nightsky1_back.png
+  artifactKey: Guid(bae71e184bb7c624ca7301000f585d80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/AsseetStore/FreeNightSky/Textures/nightsky1_back.png using Guid(bae71e184bb7c624ca7301000f585d80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0d1f71775ed6e2e6e68b8494086371b4') in 0.018540 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.956061 seconds.
+  path: Assets/art/textures/robot
+  artifactKey: Guid(bd18de47e7ea6e94babbc3096dc72e6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/textures/robot using Guid(bd18de47e7ea6e94babbc3096dc72e6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0b489b48cafa5e05a9f3ca055f4cebd5') in 0.003209 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

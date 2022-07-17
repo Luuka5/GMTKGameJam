@@ -35,8 +35,8 @@ public class SpawnPoint : MonoBehaviour
     {
         foreach (EnemyCore enemy in _enemies)
         {
-            if (!enemy.GetAliveState()) return false;
+            if (enemy.GetAliveState()) return true;
         }
-        return true; 
+        return false; 
     }
 }

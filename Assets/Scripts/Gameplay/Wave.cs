@@ -38,7 +38,7 @@ public class Wave : MonoBehaviour
         foreach (SpawnPoint spawnPoint in _spawnPoints)
         {
             if (spawnPoint == null) return false;
-            if (!spawnPoint.areEnemiesAlive())
+            if (spawnPoint.areEnemiesAlive())
             {
                 return false;
             }
