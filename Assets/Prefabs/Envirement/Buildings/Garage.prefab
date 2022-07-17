@@ -2658,6 +2658,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1661198783037924569}
+  - component: {fileID: 3918957690826653615}
+  - component: {fileID: 144513692479622931}
   m_Layer: 0
   m_Name: Garage
   m_TagString: Untagged
@@ -2681,6 +2683,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &3918957690826653615
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6980472049596256130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.0019007, y: 1.9777288, z: 3.9856062}
+  m_Center: {x: -0.0050878525, y: 1.078229, z: -0.00028157234}
+--- !u!65 &144513692479622931
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6980472049596256130}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.997242, y: 1.0618949, z: 3.9856062}
+  m_Center: {x: 0.9972415, y: 2.5720832, z: -0.00028157234}
 --- !u!1 &7570765443802149538
 GameObject:
   m_ObjectHideFlags: 0
