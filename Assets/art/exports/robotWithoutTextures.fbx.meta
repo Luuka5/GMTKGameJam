@@ -9,7 +9,32 @@ ModelImporter:
   - first:
       74: 6165553400957861818
     second: Armature|Armature|mixamo.com|Layer0.001
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Eyes
+    second: {fileID: 2100000, guid: 9439f4ac1a617d34e967c48f31bbc0f5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: robiotmetal
+    second: {fileID: 2100000, guid: 4257b1d544b288f4ea95289397d44ada, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: robotInternals
+    second: {fileID: 2100000, guid: bfa3c8598536ebd48b966152f498192c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: shinyMetal
+    second: {fileID: 2100000, guid: f7bfae2ba9974e2459acf4e6b215c03c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: wire
+    second: {fileID: 2100000, guid: 89560f9db9140ba409f5dedf401a2cec, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
