@@ -6,9 +6,16 @@ using UnityEngine;
 public class DiceCore : MonoBehaviour
 {
    public int ActiveDiceSide = 1;
+    private GravityGun _gravityGun;
+   public  PlayerData playerData;
+    private GrabThrowObject grabThrowObject;
 
-   public void OnKill()
-    { }
+    private void Awake()
+    {
+        grabThrowObject = GetComponent<GrabThrowObject>();
+    }
+    public void OnKill()
+    { grabThrowObject.OnKill(); }
 
     public int GetCurrentDiceSide()
     {
