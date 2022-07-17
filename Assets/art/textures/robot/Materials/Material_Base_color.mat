@@ -7,7 +7,15 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/art/textures/robot/Materials/Material_Base_color.mat
   m_Name: Material_Base_color
+=======
+  m_Name: Blue Eyes
+>>>>>>> 77cd317dca8053cab37d3120d06bdf7e5433fad2:Assets/art/Materials/Blue Eyes.mat
+=======
+  m_Name: Material_Base_color
+>>>>>>> 77cd317dca8053cab37d3120d06bdf7e5433fad2
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -106,9 +114,21 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+<<<<<<< HEAD
+<<<<<<< HEAD:Assets/art/textures/robot/Materials/Material_Base_color.mat
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+=======
+    - _BaseColor: {r: 0.23137257, g: 0.39607847, b: 0.8862746, a: 1}
+    - _Color: {r: 0.23137257, g: 0.39607847, b: 0.8862746, a: 1}
+    - _EmissionColor: {r: 0.21733715, g: 0.35906175, b: 1.3962264, a: 1}
+>>>>>>> 77cd317dca8053cab37d3120d06bdf7e5433fad2:Assets/art/Materials/Blue Eyes.mat
+=======
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+>>>>>>> 77cd317dca8053cab37d3120d06bdf7e5433fad2
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2690802562676288187
