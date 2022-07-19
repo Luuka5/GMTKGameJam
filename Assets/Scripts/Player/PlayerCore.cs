@@ -37,9 +37,7 @@ public class PlayerCore : MonoBehaviour, ICanDie, IDamageable
 
     public void TakeDamage(int amount)
     {
-        Debug.Log(checkPointData.lastCheckPointName);
         ChangeHealth(-amount);
-
     }
 
     private void Update()

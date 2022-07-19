@@ -5,7 +5,8 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public int count = 1;
+    public int totalCount = 1;
+    public int currentCount = 0;
     public float spawnWaitTime = 2;
     private Transform _spawnPoint;
     private EnemyCore[] _enemies;
@@ -13,7 +14,7 @@ public class SpawnPoint : MonoBehaviour
     private void Awake()
     {
         _spawnPoint = GetComponent<Transform>();
-        _enemies = new EnemyCore[count];
+        _enemies = new EnemyCore[totalCount];
     }
 
     public void Activate()
@@ -23,16 +24,17 @@ public class SpawnPoint : MonoBehaviour
 
     private IEnumerator SpawnEnemies()
     {
-        for (int i = 0; i < count; i++)
+        for (currentCount = 0; currentCount < totalCount; currentCount++)
         {
             GameObject enemy = Instantiate(enemyPrefab, _spawnPoint.position, _spawnPoint.rotation) as GameObject;
-            _enemies[i] = enemy.GetComponent<EnemyCore>();
+            _enemies[currentCount] = enemy.GetComponent<EnemyCore>();
             yield return new WaitForSeconds(spawnWaitTime);
         }
     }
 
     public bool areEnemiesAlive()
     {
+        if (currentCount < totalCount) return false;
         foreach (EnemyCore enemy in _enemies)
         {
             if (enemy == null) continue;
