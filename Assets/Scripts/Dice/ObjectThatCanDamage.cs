@@ -55,7 +55,7 @@ public class ObjectThatCanDamage : MonoBehaviour
 			case 4:
 				if (enemyNumber == 1) return 10;
 				else return 5;
-			 default: return 10; _diceCore.playerData.playerCore.TakeDamage(-20);
+			 default:_diceCore.playerData.playerCore.TakeDamage(-_diceCore.playerData.healFormCrossSide); return 10;
 		}
     }
 

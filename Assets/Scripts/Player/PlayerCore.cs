@@ -29,6 +29,8 @@ public class PlayerCore : MonoBehaviour, ICanDie, IDamageable
         
         if (_health <= 0)
             Die();
+        if (_health >= playerData.startHealth)
+            _health = playerData.startHealth;
     }
 
     public void TakeDamage(int amount)

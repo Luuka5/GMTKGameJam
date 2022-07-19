@@ -10,7 +10,7 @@ public class healthBatChanger : MonoBehaviour
 {
 
     [SerializeField] PlayerData playerData;
-    [SerializeField]Slider slider;
+    [SerializeField] Slider slider;
     PlayerCore playerCore;
     // Update is called once per frame
     private void Start()

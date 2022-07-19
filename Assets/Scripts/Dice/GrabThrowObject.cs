@@ -134,9 +134,9 @@ public class GrabThrowObject : MonoBehaviour
        
 
 
-        Vector3 _rotationDirection = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1));
+        Vector3 _rotationDirection = new Vector3(Random.Range(0.9f, 1) * Mathf.Sign(Random.Range(-1, 1)), Random.Range(0.9f, 1) * Mathf.Sign(Random.Range(-1, 1)), Random.Range(0.9f, 1) * Mathf.Sign(Random.Range(-1, 1)));
         
-        _rigidbody.AddTorque(_rotationDirection.normalized*_rotationMagnotide, ForceMode.VelocityChange);
+        _rigidbody.AddTorque(transform.up*_rotationMagnotide, ForceMode.VelocityChange);
         _rigidbody.AddForce(_direction*_throwSpeed, ForceMode.VelocityChange);
      }
 
@@ -144,8 +144,8 @@ public class GrabThrowObject : MonoBehaviour
     {    
         Release();
 
-        Vector3 _rotationDirection = new Vector3(Random.Range(-1, 1), Random.Range(-1, 1), Random.Range(-1, 1));
-        _rigidbody.AddTorque(_rotationDirection.normalized * _rotationMagnotide, ForceMode.VelocityChange);
+        Vector3 _rotationDirection = new Vector3(Random.Range(0.3f, 1) * Mathf.Sign(Random.Range(-1, 1)), Random.Range(0.3f, 1) * Mathf.Sign(Random.Range(-1, 1)), Random.Range(0.3f, 1) * Mathf.Sign(Random.Range(-1, 1)));
+        _rigidbody.AddTorque(_rotationDirection * _rotationMagnotide, ForceMode.VelocityChange);
         _rigidbody.AddForce(_throwVector, ForceMode.VelocityChange);
     }
 

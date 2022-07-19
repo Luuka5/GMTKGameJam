@@ -6,8 +6,6 @@ public class EnemyCore : MonoBehaviour, ICanDie, IDamageable
 {
     [SerializeField] public EnemySettings enemySettings;
 	[SerializeField] private RangedEnemyBrain rangedEnemyBrain;
-
-
 	[SerializeField] private int _health;
 	[SerializeField] public int enemyNumber;
 	private bool _isAlive = true;
@@ -16,10 +14,7 @@ public class EnemyCore : MonoBehaviour, ICanDie, IDamageable
 	private bool _canTakeDamage = true;
 	[SerializeField] ParticleSystem damageParticles;
 
-    private void Awake()
-    {
-		
-    }
+ 
 
     private void Start()
     {
@@ -31,6 +26,8 @@ public class EnemyCore : MonoBehaviour, ICanDie, IDamageable
 		_isAlive = false;
 		enemyRagdollController.Die();
 		rangedEnemyBrain.Die();
+		StartCoroutine(Despawn());
+		
 	}
 
 	public void ChangeHealth(int amount)
@@ -74,5 +71,23 @@ public class EnemyCore : MonoBehaviour, ICanDie, IDamageable
 	{
 		return _isAlive;
 	}
+
+	IEnumerator Despawn()
+    {
+		yield return new WaitForSeconds(enemySettings.timeToDespawn);
+
+		while(true)
+        {
+
+			yield return new WaitForEndOfFrame();
+			yield return new WaitForEndOfFrame();
+			yield return new WaitForEndOfFrame();
+			yield return new WaitForEndOfFrame();
+
+			float distanceToPlayer = Vector3.Distance(transform.position, enemySettings.playerData.playerCore.transform.position);
+			if (distanceToPlayer > enemySettings.distanceToDespawn) Destroy(this.gameObject);
+
+		}
+    }
     
 }

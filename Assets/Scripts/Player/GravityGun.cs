@@ -246,7 +246,7 @@ IEnumerator Push()
     {
         CheckForSelected();
  
-        selectedObject.Throw(cam.transform.forward * 3 + cam.transform.up * 10);
+        selectedObject.Throw(new Vector3( cam.transform.forward.normalized.x, 0, cam.transform.forward.normalized.z) * 4 + Vector3.up * 10);
         ChangeGravGunState(Release());
         yield return new WaitForEndOfFrame();
     }

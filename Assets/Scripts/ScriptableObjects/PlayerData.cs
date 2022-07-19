@@ -5,4 +5,5 @@ public class PlayerData : ScriptableObject
 { 
    public PlayerCore playerCore;
     public int startHealth;
+    public int healFormCrossSide;
 }
