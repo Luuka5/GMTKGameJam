@@ -5,15 +5,16 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     public GameObject enemyPrefab;
-    public int count = 1;
+    public int totalCount = 1;
     public float spawnWaitTime = 2;
+    private bool _isActive = false;
     private Transform _spawnPoint;
     private EnemyCore[] _enemies;
 
     private void Awake()
     {
         _spawnPoint = GetComponent<Transform>();
-        _enemies = new EnemyCore[count];
+        _enemies = new EnemyCore[totalCount];
     }
 
     public void Activate()
@@ -23,7 +24,8 @@ public class SpawnPoint : MonoBehaviour
 
     private IEnumerator SpawnEnemies()
     {
-        for (int i = 0; i < count; i++)
+        _isActive = true;
+        for (int i = 0; i < totalCount; i++)
         {
             GameObject enemy = Instantiate(enemyPrefab, _spawnPoint.position, _spawnPoint.rotation) as GameObject;
             _enemies[i] = enemy.GetComponent<EnemyCore>();
@@ -31,12 +33,14 @@ public class SpawnPoint : MonoBehaviour
         }
     }
 
-    public bool areEnemiesAlive()
+    public bool AreEnemiesAlive()
     {
+        if (isActive) return true;
         foreach (EnemyCore enemy in _enemies)
         {
+            if (enemy == null) continue;
             if (enemy.GetAliveState()) return true;
         }
-        return false; 
+        return false;
     }
 }
