@@ -6,8 +6,8 @@ public class SpawnPoint : MonoBehaviour
 {
     public GameObject enemyPrefab;
     public int totalCount = 1;
-    public int currentCount = 0;
     public float spawnWaitTime = 2;
+    private bool _isActive = false;
     private Transform _spawnPoint;
     private EnemyCore[] _enemies;
 
@@ -24,17 +24,18 @@ public class SpawnPoint : MonoBehaviour
 
     private IEnumerator SpawnEnemies()
     {
-        for (currentCount = 0; currentCount < totalCount; currentCount++)
+        _isActive = true;
+        for (int i = 0; i < totalCount; i++)
         {
             GameObject enemy = Instantiate(enemyPrefab, _spawnPoint.position, _spawnPoint.rotation) as GameObject;
-            _enemies[currentCount] = enemy.GetComponent<EnemyCore>();
+            _enemies[i] = enemy.GetComponent<EnemyCore>();
             yield return new WaitForSeconds(spawnWaitTime);
         }
     }
 
-    public bool areEnemiesAlive()
+    public bool AreEnemiesAlive()
     {
-        if (currentCount < totalCount) return false;
+        if (isActive) return true;
         foreach (EnemyCore enemy in _enemies)
         {
             if (enemy == null) continue;

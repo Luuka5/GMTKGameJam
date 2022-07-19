@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Wave : MonoBehaviour
 {
-
     public int activationTime = -1;
     public GameObject defaultEnemyPrefab;
     private SpawnPoint[] _spawnPoints;
 
     private void Awake()
     {
-
         Transform transform = GetComponent<Transform>();
         _spawnPoints = new SpawnPoint[transform.childCount];
 
@@ -39,7 +37,7 @@ public class Wave : MonoBehaviour
         foreach (SpawnPoint spawnPoint in _spawnPoints)
         {
             if (spawnPoint == null) return false;
-            if (spawnPoint.areEnemiesAlive())
+            if (spawnPoint.AreEnemiesAlive())
             {
                 return false;
             }

@@ -10,7 +10,6 @@ public class PlayerCore : MonoBehaviour, ICanDie, IDamageable
     private Transform playerTransform;
     public CheckPointData checkPointData;
 
-
     private void Awake()
     {
         playerData.playerCore = this;
@@ -29,7 +28,6 @@ public class PlayerCore : MonoBehaviour, ICanDie, IDamageable
     {
 
         _health += amount;
-
 
         if (_health <= 0)
             Die();
