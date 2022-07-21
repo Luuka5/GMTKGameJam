@@ -53,7 +53,7 @@ public class WeaponIK : MonoBehaviour
 
 	public void ChangeIKState(bool _newState)
 	{ _isActive = _newState;
-		Debug.Log(_isActive);
+	 
 	}
 
 	Vector3 GetTargetPosition()
