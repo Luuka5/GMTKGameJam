@@ -7,12 +7,12 @@ public class EnemyBullet : MonoBehaviour
     [SerializeField] private LayerMask _destroyLayers;
     [SerializeField] private int _damage;
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (IsInLayer(collision.gameObject.layer,_destroyLayers))
+        if (IsInLayer(other.gameObject.layer,_destroyLayers))
             Destroy(this.gameObject);
 
-        PlayerCore playerCore = collision.gameObject.GetComponent<PlayerCore>();
+        PlayerCore playerCore = other.gameObject.GetComponent<PlayerCore>();
 
         if (playerCore == null) return;
 

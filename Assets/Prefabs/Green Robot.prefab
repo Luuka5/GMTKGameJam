@@ -9639,6 +9639,8 @@ MonoBehaviour:
   player: {fileID: 0}
   maxLookingAngle: 27.9
   weaponIK: {fileID: 2007795322393600042}
+  distanceBehaviourRandomness: 2
+  speedRandomness: 2
 --- !u!195 &2007795322393600036
 NavMeshAgent:
   m_ObjectHideFlags: 0

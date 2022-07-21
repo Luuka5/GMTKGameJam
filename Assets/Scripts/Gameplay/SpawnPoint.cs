@@ -35,7 +35,7 @@ public class SpawnPoint : MonoBehaviour
 
     public bool AreEnemiesAlive()
     {
-        if (isActive) return true;
+        if (_isActive) return true;
         foreach (EnemyCore enemy in _enemies)
         {
             if (enemy == null) continue;
