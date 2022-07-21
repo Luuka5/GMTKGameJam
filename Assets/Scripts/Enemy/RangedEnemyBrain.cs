@@ -27,12 +27,24 @@ public class RangedEnemyBrain : MonoBehaviour
 
 	[SerializeField] WeaponIK weaponIK;
 
+	[SerializeField] float distanceBehaviourRandomness;
+	[SerializeField] float speedRandomness;
+
 	float distanceToPlayer;
 
 	public enum States {Idle, Chase, Attack, RunAway, Aim, Die};
 	States state = States.Idle;
 
-	private void FixedUpdate()
+
+    private void Awake()
+    {
+		runAwayDistance += Random.Range(-distanceBehaviourRandomness, distanceBehaviourRandomness);
+		shootDistance += Random.Range(-distanceBehaviourRandomness, distanceBehaviourRandomness);
+		chaseDistance += Random.Range(-distanceBehaviourRandomness, distanceBehaviourRandomness);
+		speed += Random.Range(-speedRandomness, speedRandomness);
+	}
+
+    private void FixedUpdate()
 	{
 		distanceToPlayer = GetDistanceToPlayer();
 

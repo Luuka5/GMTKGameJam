@@ -27,7 +27,7 @@ public class GravityGun : MonoBehaviour
     [Header("Additional")]
     [SerializeField] private LayerMask _diceLayer;
 
-
+    [SerializeField] private float _fovChangeWhenHold;
 
 
     private GravityGunStates _gravGunState;
@@ -36,8 +36,13 @@ public class GravityGun : MonoBehaviour
     bool _clickLMB;
     bool _clickRMB;
 
+    [SerializeField] private FovController fovController;
 
 
+    private void Awake()
+    {
+ 
+    }
 
     private void Start()
     {
@@ -75,6 +80,8 @@ public class GravityGun : MonoBehaviour
         selectedObject = null;
 
         _gravGunState = GravityGunStates.AimOff;
+
+        fovController.changeFov(0);
 
         while (true)
         {
@@ -178,6 +185,7 @@ IEnumerator Grab()
         CheckForSelected();
         _gravGunState = GravityGunStates.Hold;
         selectedObject.Grabbed(_holdGrabPoint,_holdLayerId);
+        fovController.changeFov(_fovChangeWhenHold);
 
         while (true)
         {
@@ -258,6 +266,7 @@ IEnumerator Release()
 
         selectedObject.Release();
         selectedObject = null;
+        fovController.changeFov(0);
 
         ChangeGravGunState(AimOff());
         yield return new WaitForEndOfFrame();

@@ -47,6 +47,12 @@ public class DiceCore : MonoBehaviour
 
    public void OnGrab()
    {
+        if (playerData.playerCore._health < playerData.healthTreasHoldForCrossSide)
+            if (Random.Range(0, playerData.healthTreasHoldForCrossSide) > playerData.playerCore._health*1.5f)
+            { ActiveDiceSide = 3; return; }
+       
+            
+
         ActiveDiceSide = GetCurrentDiceSide();
    }
 
