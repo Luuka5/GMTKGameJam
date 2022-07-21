@@ -7,8 +7,6 @@ public class CheckPoint : MonoBehaviour
 {
     public static string lastCheckPointName;
 
-    public CheckPointData checkPointData;
-
     public Transform checkPointSpawn;
 
     public EnemySpawner enemySpawner;

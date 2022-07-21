@@ -8,17 +8,19 @@ public class PlayerCore : MonoBehaviour, ICanDie, IDamageable
     [SerializeField] public PlayerData playerData;
     public int _health;
     private Transform playerTransform;
-    
-
+ 
 
     private void Awake()
     {
         playerData.playerCore = this;
         _health = playerData.startHealth;
         playerTransform = GetComponent<Transform>();
-      
 
-      
+        GameObject lastCheckPoint = GameObject.Find(CheckPoint.lastCheckPointName);
+        if (lastCheckPoint != null)
+        {
+            playerTransform.position = lastCheckPoint.GetComponent<Transform>().position;
+        }
     }
 
     private void ChangeHealth(int amount)
