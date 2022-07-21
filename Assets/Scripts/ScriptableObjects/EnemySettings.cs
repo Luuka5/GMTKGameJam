@@ -9,5 +9,4 @@ public class EnemySettings : ScriptableObject
    public float damagePauseTime = 0.2f;
    public float timeToDespawn;
    public float distanceToDespawn;
-
 }

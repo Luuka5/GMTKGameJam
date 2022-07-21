@@ -6,42 +6,30 @@ public class Wave : MonoBehaviour
 {
     public int activationTime = -1;
     public GameObject defaultEnemyPrefab;
-    private SpawnPoint[] _spawnPoints;
+    private List<SpawnPoint> _spawnPoints = new List<SpawnPoint>();
+    private EnemySpawner enemySpawner;
 
     private void Awake()
     {
         Transform transform = GetComponent<Transform>();
-        _spawnPoints = new SpawnPoint[transform.childCount];
+        enemySpawner = transform.parent.GetComponent<EnemySpawner>();
+    }
 
-        for (int i = 0; i < transform.childCount; i++)
-        {
-            _spawnPoints[i] = transform.GetChild(i).gameObject.GetComponent<SpawnPoint>();
-            if (_spawnPoints[i] != null && _spawnPoints[i].enemyPrefab == null)
-            {
-                _spawnPoints[i].enemyPrefab = defaultEnemyPrefab;
-            }
-        }
+    public void AddSpawnPoint(SpawnPoint spawnPoint)
+    {
+        _spawnPoints.Add(spawnPoint);
+    }
+
+    public EnemySpawner GetEnemySpawner()
+    {
+        return enemySpawner;
     }
 
     public void Activate()
     {
-        for (int i = 0; i < _spawnPoints.Length; i++)
+        for (int i = 0; i < _spawnPoints.Count; i++)
         {
-            if (_spawnPoints[i] == null) continue;
             _spawnPoints[i].Activate();
         }
-    }
-
-    public bool isWaveOver()
-    {
-        foreach (SpawnPoint spawnPoint in _spawnPoints)
-        {
-            if (spawnPoint == null) return false;
-            if (spawnPoint.AreEnemiesAlive())
-            {
-                return false;
-            }
-        }
-        return true;
     }
 }

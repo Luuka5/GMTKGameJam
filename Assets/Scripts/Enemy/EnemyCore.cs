@@ -14,20 +14,21 @@ public class EnemyCore : MonoBehaviour, ICanDie, IDamageable
 	private bool _canTakeDamage = true;
 	[SerializeField] ParticleSystem damageParticles;
 
- 
+	public EnemySpawner enemySpawner;
 
     private void Start()
     {
 		rangedEnemyBrain.player = enemySettings.playerData.playerCore.transform;
-
+		enemySpawner.enemyList.Add(this);
 	}
+
     public void Die()
-	{	
+	{
 		_isAlive = false;
 		enemyRagdollController.Die();
 		rangedEnemyBrain.Die();
 		StartCoroutine(Despawn());
-		
+		enemySpawner.enemyList.Remove(this);
 	}
 
 	public void ChangeHealth(int amount)
@@ -86,7 +87,6 @@ public class EnemyCore : MonoBehaviour, ICanDie, IDamageable
 
 			float distanceToPlayer = Vector3.Distance(transform.position, enemySettings.playerData.playerCore.transform.position);
 			if (distanceToPlayer > enemySettings.distanceToDespawn) Destroy(this.gameObject);
-
 		}
     }
     

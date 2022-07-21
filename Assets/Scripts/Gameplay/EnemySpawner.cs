@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    private Wave[] _waves;
     public int resetWave = 0;
+    public EnemySettings enemySettings;
+    public List<EnemyCore> enemyList = new List<EnemyCore>();
+
+    private Wave[] _waves;
     private int _waveIndex = 0;
     private int _waveCounter = 0;
-    private Coroutine _startCoroutine;
     private IEnumerator _coroutine;
-    private IEnumerator _checkIsWaveOver;
 
     private void Start()
     {
@@ -21,38 +22,36 @@ public class EnemySpawner : MonoBehaviour
         {
             _waves[i] = transform.GetChild(i).gameObject.GetComponent<Wave>();
         }
-
         _coroutine = StartWave();
-        _checkIsWaveOver = CheckIsTheWaveOver();
 
-        StartCoroutine(_checkIsWaveOver);
         StartCoroutine(_coroutine);
+    }
+
+    public bool isDone()
+    {
+        return _waveIndex >= _waves.Length && resetWave < 0;
     }
 
     public void SetWave(int index)
     {
-        _waveIndex = index;
+        if (index < _waves.Length)
+        {
+            _waveIndex = index;
+        }
+        else
+        {
+            _waveIndex = resetWave;
+            if (resetWave < 0) return;
+        }
+
         StopCoroutine(_coroutine);
+        _coroutine = StartWave();
         StartCoroutine(_coroutine);
     }
 
     public void NextWave()
     {
-        Debug.Log("NextWave");
         SetWave(_waveIndex + 1);
-    }
-
-    private IEnumerator CheckIsTheWaveOver()
-    {
-        while (true)
-        {
-            if (_waveIndex < _waves.Length) _waveIndex = resetWave;
-            if (_waves[_waveIndex].isWaveOver())
-            {
-                NextWave();
-            }
-            yield return new WaitForSeconds(1);
-        }
     }
 
     public int getWaveCount()
@@ -62,14 +61,22 @@ public class EnemySpawner : MonoBehaviour
 
     private IEnumerator StartWave()
     {
-        _waveCounter++;
-        if (_waves[_waveIndex] != null)
+        if (_waveIndex < _waves.Length)
         {
-            if (_waves[_waveIndex].activationTime != -1)
+            if (_waves[_waveIndex].activationTime > 0)
             {
                 yield return new WaitForSeconds(_waves[_waveIndex].activationTime);
             }
             _waves[_waveIndex].Activate();
         }
+
+
+        yield return new WaitForSeconds(3);
+        while (enemyList.Count > 0)
+        {
+            yield return new WaitForSeconds(1);
+        }
+
+        NextWave();
     }
 }

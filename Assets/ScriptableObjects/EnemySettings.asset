@@ -17,3 +17,4 @@ MonoBehaviour:
   damagePauseTime: 0.5
   timeToDespawn: 5
   distanceToDespawn: 10
+  enemyList: {fileID: 11400000, guid: 0d8000fadf86d5b4e8456e531701c9ed, type: 2}
