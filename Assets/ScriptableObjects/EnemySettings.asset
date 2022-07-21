@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34d2a56200812c84daba10344e4feaea, type: 3}
   m_Name: EnemySettings
   m_EditorClassIdentifier: 
-  damageTreasHold: 10
+  damageTreasHold: 60
   playerData: {fileID: 11400000, guid: 6bef8e698ad886f41bdfb8c100053df6, type: 2}
   damagePauseTime: 0.5
   timeToDespawn: 5

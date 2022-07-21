@@ -33,17 +33,19 @@ public class HitBox : MonoBehaviour
 
 			if (angle <= maxAngleToDamage)
 			{
-
-				int _damage = objectDamage.GetDamage(enemyCore.enemyNumber);
-				enemyCore.TakeDamage(_damage);
-
-
-
-				if (enemyCore.GetAliveState() == false && _damage==10)
+				
+				if (objectDamage.GetDamage() > enemyCore.enemySettings.damageTreasHold)
 				{
-					objectDamage.OnKill();
-				}
+					int _damage = objectDamage.GetDamage(enemyCore.enemyNumber);//Get real damage
+					enemyCore.TakeDamage(_damage);
+						
 
+
+					if (enemyCore.GetAliveState() == false && _damage == 10)
+					{
+						objectDamage.OnKill();
+					}
+				}
 			}
 		}
 
