@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Wave : MonoBehaviour
 {
+    public bool autoActivate;
     public int activationTime = -1;
     public GameObject defaultEnemyPrefab;
     private List<SpawnPoint> _spawnPoints = new List<SpawnPoint>();

@@ -9,7 +9,7 @@ public class EnemySpawner : MonoBehaviour
     public List<EnemyCore> enemyList = new List<EnemyCore>();
 
     private Wave[] _waves;
-    private int _waveIndex = 0;
+    private int _waveIndex = -1;
     private int _waveCounter = 0;
     private IEnumerator _coroutine;
 
@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
         }
         _coroutine = StartWave();
 
-        StartCoroutine(_coroutine);
+        NextWave();
     }
 
     public bool isDone()
@@ -32,8 +32,24 @@ public class EnemySpawner : MonoBehaviour
         return _waveIndex >= _waves.Length && resetWave < 0;
     }
 
-    public void SetWave(int index)
+    public void SetWave(Wave wave)
     {
+
+        for (int i = 0; i < _waves.Length; i++)
+        {
+            if (wave == _waves[i])
+            {
+                SetWaveIndex(i);
+            }
+        }
+    }
+    private void SetWaveIndex(int index)
+    {
+        if (index == _waveIndex)
+        {
+            return;
+        }
+
         if (index < _waves.Length)
         {
             _waveIndex = index;
@@ -51,7 +67,10 @@ public class EnemySpawner : MonoBehaviour
 
     public void NextWave()
     {
-        SetWave(_waveIndex + 1);
+        if (_waveIndex + 1 < _waves.Length && _waves[_waveIndex + 1])
+        {
+            SetWaveIndex(_waveIndex + 1);
+        }
     }
 
     public int getWaveCount()

@@ -10,7 +10,7 @@ public class CheckPoint : MonoBehaviour
     public Transform checkPointSpawn;
 
     public EnemySpawner enemySpawner;
-    public int waveIndex;
+    public Wave wave;
 
     private void Awake()
     {
@@ -21,11 +21,10 @@ public class CheckPoint : MonoBehaviour
     {
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
-        enemySpawner.SetWave(waveIndex);
+        enemySpawner.SetWave(wave);
     }
     private void OnTriggerEnter(Collider collider)
     {
-        Debug.Log("Collision");
         if (collider.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             CheckPoint.lastCheckPointName = name;
