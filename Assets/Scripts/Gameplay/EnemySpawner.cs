@@ -67,7 +67,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void NextWave()
     {
-        if (_waveIndex + 1 < _waves.Length && _waves[_waveIndex + 1])
+        if (_waveIndex + 1 < _waves.Length && _waves[_waveIndex + 1].autoActivate)
         {
             SetWaveIndex(_waveIndex + 1);
         }
