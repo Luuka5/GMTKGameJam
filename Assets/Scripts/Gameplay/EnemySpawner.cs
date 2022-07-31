@@ -13,6 +13,10 @@ public class EnemySpawner : MonoBehaviour
     private int _waveCounter = 0;
     private IEnumerator _coroutine;
 
+    private void Awake()
+    {
+        enemySettings.enemySpawner = this;
+    }
     private void Start()
     {
         Transform transform = GetComponent<Transform>();
@@ -98,4 +102,8 @@ public class EnemySpawner : MonoBehaviour
 
         NextWave();
     }
+
+    public List<EnemyCore> GetEnemyList()
+    { return enemyList; }
+
 }

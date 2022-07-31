@@ -9,7 +9,7 @@ public class HitBox : MonoBehaviour
 	[SerializeField] Rigidbody rb;
 	float maxAngleToDamage = 400f;
 
-	private void Start()
+	private void Awake()
 	{
 		rb = GetComponent<Rigidbody>();
 		enemyRagdollController = enemyCore.enemyRagdollController;

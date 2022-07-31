@@ -117,7 +117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 245a9b763cbc53040823563bc6f6fbca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _rigidbody: {fileID: 0}
   _tempLayerID: 7
+  _timeBeforeDiceReturn: 0
   _timeToChangelayer: 0.2
   _rotationMagnotide: 16
   holdUpRotation: {x: 0, y: 10, z: 0}
@@ -177,4 +179,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ActiveDiceSide: 1
-  playerData: {fileID: 0}
+  playerData: {fileID: 11400000, guid: 6bef8e698ad886f41bdfb8c100053df6, type: 2}
+  enemySettings: {fileID: 11400000, guid: dc4abb11f34d61346bedb82833ee1357, type: 2}
