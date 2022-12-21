@@ -26,7 +26,7 @@ public class Wave : MonoBehaviour
         return enemySpawner;
     }
 
-    public void Activate()
+    public virtual void Activate()
     {
         for (int i = 0; i < _spawnPoints.Count; i++)
         {

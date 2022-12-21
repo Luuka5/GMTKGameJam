@@ -13,6 +13,7 @@ public class WaveTrigger : MonoBehaviour
         if (other.gameObject.layer == playerData.playerCore.gameObject.layer)
         {
             enemySpawner.SetWave(wave);
+            gameObject.SetActive(false);
         }
     }
 }

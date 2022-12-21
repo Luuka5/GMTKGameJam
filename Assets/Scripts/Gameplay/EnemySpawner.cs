@@ -90,6 +90,7 @@ public class EnemySpawner : MonoBehaviour
             {
                 yield return new WaitForSeconds(_waves[_waveIndex].activationTime);
             }
+            Debug.Log(_waves[_waveIndex]);
             _waves[_waveIndex].Activate();
         }
 
