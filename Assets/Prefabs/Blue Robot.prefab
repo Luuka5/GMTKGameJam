@@ -197,17 +197,49 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e6294232ae474394b94a5915c7e54815, type: 2}
+    - target: {fileID: 2007795322393600034, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
+      propertyPath: burstFire
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007795322393600034, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
+      propertyPath: _shootMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007795322393600034, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
+      propertyPath: _shootgunSpread
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007795322393600034, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
+      propertyPath: projectileSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007795322393600034, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
+      propertyPath: timeBetweenShots
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007795322393600034, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
+      propertyPath: _shootgunProjectileAmmount
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007795322393600035, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
+      propertyPath: speed
+      value: 35
+      objectReference: {fileID: 0}
     - target: {fileID: 2007795322393600035, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
       propertyPath: chaseDistance
-      value: 26.5
+      value: 26.2
       objectReference: {fileID: 0}
     - target: {fileID: 2007795322393600035, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
       propertyPath: shootDistance
-      value: 11.8
+      value: 13.82
       objectReference: {fileID: 0}
     - target: {fileID: 2007795322393600035, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
       propertyPath: runAwayDistance
-      value: 4.55
+      value: 2.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 2661805797493059694, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
+      propertyPath: m_RootOrder
+      value: 68
       objectReference: {fileID: 0}
     - target: {fileID: 2764442254607904684, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
       propertyPath: m_RootOrder
@@ -253,6 +285,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2764442254607904686, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: edd3527c1afa00e4f9550c6c2b45b712, type: 2}
     - target: {fileID: 2764442254607904687, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
       propertyPath: _health
       value: 10

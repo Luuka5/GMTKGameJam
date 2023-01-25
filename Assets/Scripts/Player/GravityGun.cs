@@ -28,7 +28,7 @@ public class GravityGun : MonoBehaviour
     [SerializeField] private LayerMask _diceLayer;
 
     [SerializeField] private float _fovChangeWhenHold;
-
+    [SerializeField] private FindObjectToAim _findObjectToAim;
 
     private GravityGunStates _gravGunState;
     [SerializeField] private Camera cam;
@@ -86,26 +86,29 @@ public class GravityGun : MonoBehaviour
         while (true)
         {
 
+            if (_findObjectToAim.objectToAim != null)
+                ChangeGravGunState(AimOn());
+
+            /*   RaycastHit hit;
+              Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
 
-            RaycastHit hit;
-            Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, _diceLayer))
-            {
+               if (Physics.Raycast(ray, out hit, Mathf.Infinity, _diceLayer))
+              {
 
-                if (hit.rigidbody == null)
-                    continue;
+                  if (hit.rigidbody == null)
+                      continue;
 
-                if (hit.rigidbody.gameObject.tag != "Dice")
-                    continue;
+                  if (hit.rigidbody.gameObject.tag != "Dice")
+                      continue;
 
-                    selectedObject = hit.rigidbody.gameObject.GetComponent<GrabThrowObject>();
-                    ChangeGravGunState(AimOn());
-                
-                   
-            }
+                      selectedObject = hit.rigidbody.gameObject.GetComponent<GrabThrowObject>();
+                      ChangeGravGunState(AimOn());
 
+
+              }
+              */
 
 
             yield return new WaitForEndOfFrame();
@@ -118,27 +121,32 @@ IEnumerator AimOn()
 
         while (true)
         {
-
-
-
-            RaycastHit hit;
-            Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
-
-            if (Physics.Raycast(ray, out hit, Mathf.Infinity, _diceLayer))
+            if (_findObjectToAim.objectToAim != null)
             {
-
-                if (hit.rigidbody == null)
-                    ChangeGravGunState(AimOff());
-
-                if (hit.rigidbody.gameObject.tag != "Dice")
-                    ChangeGravGunState(AimOff());
-
-
-                    selectedObject = hit.rigidbody.gameObject.GetComponent<GrabThrowObject>();
-
+                selectedObject = _findObjectToAim.objectToAim.GetComponent<GrabThrowObject>();
+                Debug.Log("!!!");
             }
             else ChangeGravGunState(AimOff());
 
+            /*
+             RaycastHit hit;
+             Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+
+             if (Physics.Raycast(ray, out hit, Mathf.Infinity, _diceLayer))
+             {
+
+                 if (hit.rigidbody == null)
+                     ChangeGravGunState(AimOff());
+
+                 if (hit.rigidbody.gameObject.tag != "Dice")
+                     ChangeGravGunState(AimOff());
+
+
+                     selectedObject = hit.rigidbody.gameObject.GetComponent<GrabThrowObject>();
+
+             }
+             else ChangeGravGunState(AimOff());
+            */
 
             if (CheckLMB())    
                 ChangeGravGunState(Push());

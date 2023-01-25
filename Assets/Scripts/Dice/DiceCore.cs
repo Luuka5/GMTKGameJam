@@ -119,4 +119,16 @@ public class DiceCore : MonoBehaviour
         }
     }
 
+
+    public void Destroy()
+    {
+
+    }
+
+    public bool GetDestroyedState()
+    { 
+        
+        return true; 
+    }
+
 }

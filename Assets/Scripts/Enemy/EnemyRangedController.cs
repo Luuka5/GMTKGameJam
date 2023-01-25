@@ -2,26 +2,50 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
+[RequireComponent(typeof(RangedEnemyBrain))]
 public class EnemyRangedController : MonoBehaviour,ICanShoot
 {
+	enum ShootMode {Single, Burst, Shotgun, UltraLaser}
+	
 	
 
+	[Header("SHOOT MODE")]
+	[SerializeField] private ShootMode _shootMode;
+
+	[Space]
+
+	[Header("BASE")]
+	[SerializeField] GameObject projectile;
 	[SerializeField] float projectileSpeed;
-	[SerializeField] Transform targetTransform;
+	[SerializeField] float timeBetweenShots;
+	[SerializeField] Transform aimTransform;
+	[SerializeField] ParticleSystem _shootFlashParticles;
 
-	[SerializeField] bool autoShoot;
+	[Space]
 
-	[SerializeField] bool burstFire;
+	[Header("BURST")]
 	[SerializeField] float burstShotsAmount;
 	[SerializeField] float timeBetweenBurstShoots;
-
-	[SerializeField] float timeBetweenShots;
-	 
-	[SerializeField] GameObject projectile;
-	[SerializeField] Transform aimTransform;
+	
 	IEnumerator burstShootCorutine;
 	IEnumerator autoShootCorutine;
+
+	[Space]
+
+	[Header("SHOTGUN")]
+	[SerializeField] private float _shootgunProjectileAmmount;
+	[SerializeField] private float _shootgunSpread;
+
+	[Space]
+
+	[Header("EXTRA")]
 	[SerializeField] public EnemyCore enemyController;
+	[SerializeField] bool autoShoot;
+
+	Transform targetTransform; //Transform of Player
+	public RangedEnemyBrain _rangedEnemyBrain;
 
 	bool isShooting = false;
 
@@ -44,7 +68,7 @@ public class EnemyRangedController : MonoBehaviour,ICanShoot
 	public void Shoot(float speed, Vector3 direction)
 	{
 	
-		GameObject bullet = Instantiate(projectile, aimTransform.position,aimTransform.rotation);
+		GameObject bullet = Instantiate(projectile, aimTransform.position,Quaternion.LookRotation(direction,Vector3.up));
 		Rigidbody rb = bullet.GetComponent<Rigidbody>();
 		if (rb)
 		{
@@ -53,10 +77,39 @@ public class EnemyRangedController : MonoBehaviour,ICanShoot
 			rb.AddForce(direction * projectileSpeed, ForceMode.VelocityChange);
 			
 		}
+		_rangedEnemyBrain.animator.SetTrigger("Shoot");
+		ShootFlash();
 	}
 
-	
+	private void StartShoot()
+    {
 
+		switch (_shootMode)
+		{
+			case ShootMode.Single:
+				Shoot(projectileSpeed, aimTransform.forward);
+				break;
+			case ShootMode.Burst:
+				StartCoroutine(BurstShoot(burstShotsAmount));
+				break;
+			case ShootMode.Shotgun:
+				ShotgunShoot();
+				break;
+			case ShootMode.UltraLaser:
+				break;
+		}
+
+	}
+
+	private void ShotgunShoot()
+    {
+		for(int i=0; i< _shootgunProjectileAmmount;i++)
+			Shoot(projectileSpeed, aimTransform.forward + new Vector3(Random.Range(0, _shootgunSpread), Random.Range(0, _shootgunSpread), Random.Range(0, _shootgunSpread)));
+		
+
+		
+		
+	}
 
 	IEnumerator BurstShoot(float amountOfShots)
 	{
@@ -73,18 +126,19 @@ public class EnemyRangedController : MonoBehaviour,ICanShoot
 
 		while (true)
 		{
-			isShooting = false;
 
-			yield return new WaitForSeconds(timeBetweenShots);
+			yield return new WaitForEndOfFrame();
+			yield return new WaitForEndOfFrame();
+			yield return new WaitForEndOfFrame();
+
 			if (!autoShoot) continue;
 
 			isShooting = true;
 
-			if (burstFire)
-				StartCoroutine( BurstShoot(burstShotsAmount));
-			else
-				Shoot(projectileSpeed, aimTransform.forward);
-			
+			StartShoot();
+			isShooting = false;
+
+			yield return new WaitForSeconds(timeBetweenShots);
 			
 		}
 
@@ -112,5 +166,11 @@ public class EnemyRangedController : MonoBehaviour,ICanShoot
 	public void SetAutoShootState(bool newSate)
 	{
 		autoShoot = newSate;
+	}
+
+	void ShootFlash()
+	{
+		if (_shootFlashParticles != null)
+			_shootFlashParticles.Emit(1);
 	}
 }

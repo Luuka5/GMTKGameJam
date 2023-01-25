@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class RangedEnemyBrain : MonoBehaviour
 {
 	[SerializeField] NavMeshAgent agent;
-	[SerializeField] Animator animator;
+	[SerializeField] public  Animator animator;
 	[SerializeField] float runAwayDistance;
 	[SerializeField] float shootDistance;
 	[SerializeField] float chaseDistance;
@@ -42,6 +42,7 @@ public class RangedEnemyBrain : MonoBehaviour
 		shootDistance += Random.Range(-distanceBehaviourRandomness, distanceBehaviourRandomness);
 		chaseDistance += Random.Range(-distanceBehaviourRandomness, distanceBehaviourRandomness);
 		speed += Random.Range(-speedRandomness, speedRandomness);
+		enemyRangedController._rangedEnemyBrain = this;
 	}
 
     private void FixedUpdate()

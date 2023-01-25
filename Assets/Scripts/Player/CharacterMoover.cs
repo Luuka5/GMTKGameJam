@@ -9,6 +9,7 @@ public class CharacterMoover : MonoBehaviour
     [SerializeField] private float _jumpHeight;
     [SerializeField] private float _gravityValue;
     [SerializeField] private Transform _orientation;
+    [SerializeField] private float _coyoteFrames;
     private CharacterController _characterController;
     private Vector3 _moveVector;
     private bool _grounded;
@@ -18,10 +19,13 @@ public class CharacterMoover : MonoBehaviour
         _characterController = GetComponent<CharacterController>();
 
         if (_characterController == null) Debug.Log("No Character Controller Connected");
+        StartCoroutine(isGroundedCheck());
     }
 
     private void Update()
     {
+        Debug.Log("_grounded="+_grounded);
+
         if (_characterController == null) return;
 
 
@@ -29,7 +33,7 @@ public class CharacterMoover : MonoBehaviour
 
         _moveVector = new Vector3(0,_moveVector.y,0);
 
-        _grounded = _characterController.isGrounded;
+       // _grounded = _characterController.isGrounded;
 
         float _verticalInput = Input.GetAxisRaw("Vertical");
         float _horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -75,5 +79,19 @@ public class CharacterMoover : MonoBehaviour
 
     }
 
+    IEnumerator isGroundedCheck()
+    {
+        while (true)
+        {
+            _grounded = _characterController.isGrounded;
 
+            if (_grounded)
+            {
+                for (int i = 0; i < _coyoteFrames; i++)
+                    yield return new WaitForEndOfFrame();
+            }
+
+            yield return new WaitForFixedUpdate();        }
+    }
+   
 }

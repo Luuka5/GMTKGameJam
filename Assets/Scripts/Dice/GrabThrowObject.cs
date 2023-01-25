@@ -14,7 +14,7 @@ public class GrabThrowObject : MonoBehaviour
     [SerializeField] private float  _timeBeforeDiceReturn;
     [SerializeField] private float _timeToChangelayer;
     [SerializeField] private float _rotationMagnotide;
-    [SerializeField]private Vector3 holdUpRotation;
+    [SerializeField] private Vector3 holdUpRotation;
     GravityGun gravityGun;
     
     private void Awake()
@@ -26,7 +26,7 @@ public class GrabThrowObject : MonoBehaviour
         _rigidbody.maxAngularVelocity = Mathf.Infinity;
     }
     private void Start()
-    {
+    {   
         gravityGun = _diceCore.playerData.playerCore.GetComponent<GravityGun>();
     }
 
@@ -137,6 +137,7 @@ public class GrabThrowObject : MonoBehaviour
         Vector3 _rotationDirection = new Vector3(Random.Range(0.9f, 1) * Mathf.Sign(Random.Range(-1, 1)), Random.Range(0.9f, 1) * Mathf.Sign(Random.Range(-1, 1)), Random.Range(0.9f, 1) * Mathf.Sign(Random.Range(-1, 1)));
         
         _rigidbody.AddTorque(transform.up*_rotationMagnotide, ForceMode.VelocityChange);
+        _rigidbody.velocity = Vector3.zero;
         _rigidbody.AddForce(_direction*_throwSpeed, ForceMode.VelocityChange);
      }
 
