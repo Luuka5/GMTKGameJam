@@ -11,6 +11,8 @@ public class FindObjectToAim : MonoBehaviour
 	[SerializeField] private float _radius;
 	[SerializeField] private float baseLengthOfOverlapCapsule;
 	[SerializeField] public GameObject objectToAim;
+	private bool _searchingEnabled;
+
 	
 
 
@@ -21,6 +23,8 @@ public class FindObjectToAim : MonoBehaviour
 
 	private void Update()
 	{
+		if (_searchingEnabled == false) return;
+
 		RaycastHit hit;
 		Ray ray = _cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
 
@@ -116,5 +120,16 @@ public class FindObjectToAim : MonoBehaviour
 
 		}
 	}
+
+	public void DisableSearching()
+    {
+		_searchingEnabled = false;
+		objectToAim = null;
+	}
+
+	public void EnableSearching()
+    {
+		_searchingEnabled = true;
+    }
 }
 

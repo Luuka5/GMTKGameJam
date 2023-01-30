@@ -20,6 +20,8 @@ public class TrailVisibilityController : MonoBehaviour
 
     private void Start()
     {
+        if (_camera == null)
+            _camera = FindObjectOfType<Camera>();
         _timeOriginal = _trailRenderer.time;
     }
 
@@ -31,23 +33,23 @@ public class TrailVisibilityController : MonoBehaviour
 
    private void DisableTrail()
     {      
-        _trailRenderer.time = 0;
+        _trailRenderer.enabled = false;
     }
 
     private void EnableTrail()
     {
-        _trailRenderer.time = _timeOriginal;
+        _trailRenderer.enabled = true;
     }
 
 
     private void UpdateTrailVisibility()
     {
 
-        Debug.Log(_originalObject.gameObject.layer + " = " + LayerMask.NameToLayer("Hold"));
+        
 
         if ((_originalObject.gameObject.layer == LayerMask.NameToLayer("Hold")) || (_originalObject.gameObject.layer == LayerMask.NameToLayer("TempDice")) )
         {
-            Debug.Log("YAY!");
+            
             DisableTrail(); return; }
 
         if (_disableIfRendererNotVisible && !CheckIfVisible())

@@ -24,7 +24,7 @@ public class CharacterMoover : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log("_grounded="+_grounded);
+       
 
         if (_characterController == null) return;
 
@@ -33,7 +33,7 @@ public class CharacterMoover : MonoBehaviour
 
         _moveVector = new Vector3(0,_moveVector.y,0);
 
-       // _grounded = _characterController.isGrounded;
+      
 
         float _verticalInput = Input.GetAxisRaw("Vertical");
         float _horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -88,10 +88,15 @@ public class CharacterMoover : MonoBehaviour
             if (_grounded)
             {
                 for (int i = 0; i < _coyoteFrames; i++)
-                    yield return new WaitForEndOfFrame();
+                    yield return new WaitForFixedUpdate();
             }
 
             yield return new WaitForFixedUpdate();        }
+    }
+
+    public void NewVelocity(Vector3 _newVelocity)
+    {
+        _moveVector = _newVelocity;
     }
    
 }

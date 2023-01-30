@@ -77,9 +77,13 @@ public class GravityGun : MonoBehaviour
     }
     IEnumerator AimOff()
     {
+       
+
         selectedObject = null;
 
         _gravGunState = GravityGunStates.AimOff;
+
+        _findObjectToAim.EnableSearching();
 
         fovController.changeFov(0);
 
@@ -119,12 +123,14 @@ IEnumerator AimOn()
     {
         _gravGunState = GravityGunStates.AimOn;
 
+        _findObjectToAim.EnableSearching();
+
         while (true)
         {
             if (_findObjectToAim.objectToAim != null)
             {
                 selectedObject = _findObjectToAim.objectToAim.GetComponent<GrabThrowObject>();
-                Debug.Log("!!!");
+               
             }
             else ChangeGravGunState(AimOff());
 
@@ -164,6 +170,8 @@ IEnumerator Grab()
         CheckForSelected();
         _gravGunState = GravityGunStates.Grab;
 
+        _findObjectToAim.DisableSearching();
+
         selectedObject.Grab(_holdGrabPoint, _grabSpeed);
 
 
@@ -192,6 +200,9 @@ IEnumerator Grab()
     {
         CheckForSelected();
         _gravGunState = GravityGunStates.Hold;
+
+        _findObjectToAim.DisableSearching();
+
         selectedObject.Grabbed(_holdGrabPoint,_holdLayerId);
         fovController.changeFov(_fovChangeWhenHold);
 
@@ -307,5 +318,10 @@ private void CheckForSelected()
         bool _temp = _clickRMB;
         _clickRMB = false;
         return _temp;
+    }
+
+    void ForceHold()
+    {
+        ChangeGravGunState(Hold());
     }
 }

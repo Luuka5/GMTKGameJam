@@ -15,6 +15,7 @@ public class GrabThrowObject : MonoBehaviour
     [SerializeField] private float _timeToChangelayer;
     [SerializeField] private float _rotationMagnotide;
     [SerializeField] private Vector3 holdUpRotation;
+    [SerializeField] private float _maxGrabSpeedMultiplier  = 5f;
     GravityGun gravityGun;
     
     private void Awake()
@@ -51,9 +52,18 @@ public class GrabThrowObject : MonoBehaviour
     public void Grab(Transform _whereToGrab, float _grabSpeed)
     {
         _diceCore.OnGrab();
-        Vector3 direction = _whereToGrab.position - transform.position;
+        Vector3 _direction = _whereToGrab.position - transform.position;
+        float _speedMiltiplier = _direction.magnitude;
+        _speedMiltiplier = Mathf.Min(_grabSpeed, _maxGrabSpeedMultiplier);
+
+
+        _direction = _direction.normalized;
+        
        _rigidbody.velocity = Vector3.zero;
-        _rigidbody.AddForce(direction * _grabSpeed, ForceMode.VelocityChange);
+       
+        
+        _rigidbody.AddForce(_direction * _grabSpeed * _speedMiltiplier, ForceMode.VelocityChange);
+        
         _beingGrabbed = true;
         StartCoroutine(GrabFlyCorrector(_whereToGrab));
 
