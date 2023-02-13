@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4634550748168728405}
   - component: {fileID: 4634550748168728402}
   - component: {fileID: 6102136784849916463}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: EnemyBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4634550748168728406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.2, y: 3, z: -21.76}
+  m_LocalPosition: {x: 3.41, y: 3, z: -21.76}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 5205185976780032922}
   - component: {fileID: 3227562811189008603}
   - component: {fileID: 8031877113876856449}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}

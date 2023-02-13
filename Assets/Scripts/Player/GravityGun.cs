@@ -172,12 +172,25 @@ IEnumerator Grab()
 
         _findObjectToAim.DisableSearching();
 
+
+        if (selectedObject==null || _holdGrabPoint==null)
+        { Debug.Log("WTF IM STUPID" + selectedObject + "----" + _holdGrabPoint ); }
+
+
+        if (!CheckForSelected())
+        {
+            ChangeGravGunState(Release());
+            yield break;
+        }
+
         selectedObject.Grab(_holdGrabPoint, _grabSpeed);
 
 
 
         while (true)
         {
+            CheckForSelected();
+
             if (CheckRMB())
                 ChangeGravGunState(Release());
 
@@ -300,13 +313,17 @@ private void ChangeGravGunState(IEnumerator enumerator)
 
     }
 
-private void CheckForSelected()
+private bool CheckForSelected()
     {
         if (selectedObject == null)
+        {
             ChangeGravGunState(AimOff());
+            return false;
+        }
+        return true;
     }
-
- bool CheckLMB()
+   
+        bool CheckLMB()
     {
        bool  _temp = _clickLMB;
         _clickLMB = false;
@@ -320,8 +337,14 @@ private void CheckForSelected()
         return _temp;
     }
 
-    void ForceHold()
+  public  void ForceHold(GrabThrowObject _grabThrowObject)
     {
+        
+        ChangeGravGunState(Release());
+
+        _grabThrowObject.transform.position = _holdGrabPoint.position;
+        selectedObject = _grabThrowObject;
         ChangeGravGunState(Hold());
+        
     }
 }

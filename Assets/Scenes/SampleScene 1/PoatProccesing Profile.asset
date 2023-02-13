@@ -52,7 +52,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.043
+    m_Value: 0.13
   smoothness:
     m_OverrideState: 0
     m_Value: 0.2
@@ -133,18 +133,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a8c351b9ce52154fba0d0580007d570, type: 3}
   m_Name: Kuwahara
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: 1
   radius:
     m_OverrideState: 1
-    m_Value: 2
+    m_Value: 4
   startFadeDistance:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 100
   endFadeDistance:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 500
 --- !u!114 &-1034962032392930851
 MonoBehaviour:
@@ -182,6 +182,8 @@ MonoBehaviour:
   - {fileID: 6994934033051757408}
   - {fileID: -3421656738285418986}
   - {fileID: 3019908544616115612}
+  - {fileID: 7785995012715325922}
+  - {fileID: 490169541526422976}
 --- !u!114 &49270592708847965
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -220,6 +222,28 @@ MonoBehaviour:
     m_OverrideState: 0
     m_Value: {fileID: 0}
   dirtIntensity:
+    m_OverrideState: 0
+    m_Value: 0
+--- !u!114 &490169541526422976
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fae979ba049e535429dde8ab92b28488, type: 3}
+  m_Name: Scanlines
+  m_EditorClassIdentifier: 
+  active: 0
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0
+  amount:
+    m_OverrideState: 0
+    m_Value: 700
+  speed:
     m_OverrideState: 0
     m_Value: 0
 --- !u!114 &1044393976452958657
@@ -309,15 +333,15 @@ MonoBehaviour:
     m_Value: 1
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 122.6
+    m_Value: 27.9
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 30
+    m_Value: 116.9
   gaussianMaxRadius:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   highQualitySampling:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   focusDistance:
     m_OverrideState: 0
@@ -353,6 +377,31 @@ MonoBehaviour:
   intensity:
     m_OverrideState: 1
     m_Value: 0
+--- !u!114 &7785995012715325922
+MonoBehaviour:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4084fdf355ba7b74ca4d26495e077c9a, type: 3}
+  m_Name: SpeedLines
+  m_EditorClassIdentifier: 
+  active: 0
+  noiseTex:
+    m_OverrideState: 1
+    m_Value: {fileID: 2800000, guid: fe06d9035cfd4064497518ed947395ca, type: 3}
+  intensity:
+    m_OverrideState: 1
+    m_Value: 0.396
+  size:
+    m_OverrideState: 1
+    m_Value: 0.794
+  falloff:
+    m_OverrideState: 1
+    m_Value: 0.247
 --- !u!114 &8754794437935082862
 MonoBehaviour:
   m_ObjectHideFlags: 3

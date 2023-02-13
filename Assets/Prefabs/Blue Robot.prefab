@@ -11,29 +11,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blue Damage Particles
       objectReference: {fileID: 0}
-    - target: {fileID: 1067170728552692561, guid: 7c4174bf5e86e854f9e2991a2f536bce, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 20717ffea8eb6f446a94839223bf1e33, type: 2}
-    - target: {fileID: 1067170728552692561, guid: 7c4174bf5e86e854f9e2991a2f536bce, type: 3}
-      propertyPath: m_Materials.Array.data[1]
-      value: 
-      objectReference: {fileID: 2100000, guid: 20717ffea8eb6f446a94839223bf1e33, type: 2}
     - target: {fileID: 7334651958919497826, guid: 7c4174bf5e86e854f9e2991a2f536bce, type: 3}
       propertyPath: m_RootOrder
-      value: 67
-      objectReference: {fileID: 0}
-    - target: {fileID: 7334651958919497826, guid: 7c4174bf5e86e854f9e2991a2f536bce, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7334651958919497826, guid: 7c4174bf5e86e854f9e2991a2f536bce, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 7334651958919497826, guid: 7c4174bf5e86e854f9e2991a2f536bce, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.7
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7334651958919497826, guid: 7c4174bf5e86e854f9e2991a2f536bce, type: 3}
       propertyPath: m_LocalPosition.x
@@ -239,7 +219,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2661805797493059694, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
       propertyPath: m_RootOrder
-      value: 68
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2764442254607904684, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
       propertyPath: m_RootOrder
@@ -325,6 +305,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: e6294232ae474394b94a5915c7e54815, type: 2}
+    - target: {fileID: 9189278250186417613, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}
 --- !u!4 &4844169675640296308 stripped

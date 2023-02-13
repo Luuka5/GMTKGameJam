@@ -47,7 +47,7 @@ public class TrailVisibilityController : MonoBehaviour
 
         
 
-        if ((_originalObject.gameObject.layer == LayerMask.NameToLayer("Hold")) || (_originalObject.gameObject.layer == LayerMask.NameToLayer("TempDice")) )
+        if ((_originalObject.gameObject.layer == LayerMask.NameToLayer("Hold"))  )
         {
             
             DisableTrail(); return; }

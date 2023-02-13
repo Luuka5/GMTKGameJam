@@ -32,6 +32,8 @@ public class WeaponIK : MonoBehaviour
 	[SerializeField] float rotateSpeed = 1f;
 
 	private bool _isActive = false;
+	private bool _isPaused = false;
+	private Vector3 _savedTargetPosition;
 
 	EnemyCore enemyCore;
 
@@ -51,6 +53,18 @@ public class WeaponIK : MonoBehaviour
 		targetTransform = enemyCore.enemySettings.playerData.playerCore.transform;
     }
 
+	public void PauseIK()
+    {
+		_savedTargetPosition = GetTargetPosition();
+		_isPaused = true;
+    }
+
+	public void UnPauseIK()
+    {
+		_isPaused = false;
+	}
+	
+
 	public void ChangeIKState(bool _newState)
 	{ _isActive = _newState;
 	 
@@ -58,6 +72,8 @@ public class WeaponIK : MonoBehaviour
 
 	Vector3 GetTargetPosition()
 	{
+		if (_isPaused) return _savedTargetPosition;
+
 		Vector3 targetDirection = targetTransform.position - aimTransform.position;
 		Vector3 aimDirection = aimTransform.forward;
 		float blendout = 0f;
@@ -86,8 +102,17 @@ public class WeaponIK : MonoBehaviour
 
 	}
 
-	// Update is called once per frame
-	void LateUpdate()
+    private void Update()
+    {
+		if (Input.GetKeyDown(KeyCode.J))
+          if (!_isPaused) PauseIK();
+			  else UnPauseIK(); 
+		
+
+    }
+
+    // Update is called once per frame
+    void LateUpdate()
     {
 		
 		if (!_isActive) return;

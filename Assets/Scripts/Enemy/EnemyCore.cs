@@ -1,33 +1,53 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyCore : MonoBehaviour, ICanDie, IDamageable
 {
-    [SerializeField] public EnemySettings enemySettings;
-	[SerializeField] private RangedEnemyBrain rangedEnemyBrain;
+	[SerializeField] public EnemySettings enemySettings;
+	[SerializeField] public RangedEnemyBrain rangedEnemyBrain;
 	[SerializeField] private int _health;
 	[SerializeField] public int enemyNumber;
+	[SerializeField] public WeaponIK weaponIK;
+	[SerializeField] private ImpactBanner _impactBanner;
 	private bool _isAlive = true;
+
+	public delegate void _simpleDelegate();
+	public event _simpleDelegate OnDeath;
+
 	public Animator animator;
 	public EnemyRagdollController enemyRagdollController;
 	private bool _canTakeDamage = true;
 	[SerializeField] ParticleSystem damageParticles;
 
 	public EnemySpawner enemySpawner;
-
+	
     private void Start()
     {
 		rangedEnemyBrain.player = enemySettings.playerData.playerCore.transform;
 		enemySpawner.enemyList.Add(this);
+
+		
 	}
 
     public void Die()
 	{
+		if (!_isAlive) return;
+
+
 		_isAlive = false;
-		enemyRagdollController.Die();
-		rangedEnemyBrain.Die();
+
+		OnDeath.Invoke();
+
+		
+		
+		
 		StartCoroutine(Despawn());
+
+
+
+
 		enemySpawner.enemyList.Remove(this);
 	}
 
@@ -38,12 +58,12 @@ public class EnemyCore : MonoBehaviour, ICanDie, IDamageable
 
 	public void TakeDamage(int amount)
 	{
-		Debug.Log("Damege: " + amount);
+		//Debug.Log("Damege: " + amount);
 
 		if (_canTakeDamage)
 			ChangeHealth(-amount);
 
-		damageParticles.Emit(amount * 5);
+		damageParticles.Emit(amount * 15);
 		if (checkDeath()) Die();
 		
 

@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [RequireComponent(typeof(RangedEnemyBrain))]
-public class EnemyRangedController : MonoBehaviour,ICanShoot
+public class EnemyRangedController : MonoBehaviour
 {
 	enum ShootMode {Single, Burst, Shotgun, UltraLaser}
 	
@@ -37,6 +37,16 @@ public class EnemyRangedController : MonoBehaviour,ICanShoot
 	[Header("SHOTGUN")]
 	[SerializeField] private float _shootgunProjectileAmmount;
 	[SerializeField] private float _shootgunSpread;
+
+
+	[Space]
+
+	[Header("ULTRA LASER")]
+	[SerializeField] private LaserShooter _laserPrefab;
+	[SerializeField] private float _laserPrepareTime;
+	[SerializeField] private float _laserShootTime;
+	
+
 
 	[Space]
 
@@ -96,10 +106,16 @@ public class EnemyRangedController : MonoBehaviour,ICanShoot
 				ShotgunShoot();
 				break;
 			case ShootMode.UltraLaser:
+				UltraLaserShoot();
 				break;
 		}
 
 	}
+
+	private void UltraLaserShoot()
+    {
+		_laserPrefab.Shoot(_laserPrepareTime, _laserShootTime);
+    }
 
 	private void ShotgunShoot()
     {

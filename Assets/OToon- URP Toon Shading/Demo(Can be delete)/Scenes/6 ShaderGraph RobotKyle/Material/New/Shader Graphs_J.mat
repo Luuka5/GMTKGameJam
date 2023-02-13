@@ -54,7 +54,7 @@ Material:
     - _NoiseScale: 14.44
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _dISTORTION: -3.81
+    - _dISTORTION: 0
     m_Colors:
     - _DistortionSpeed: {r: 0, g: 0.25, b: 0, a: 0}
   m_BuildTextureStacks: []

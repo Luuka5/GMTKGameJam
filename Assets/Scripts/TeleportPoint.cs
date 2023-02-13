@@ -16,6 +16,12 @@ public class TeleportPoint : MonoBehaviour
 
     private void Start()
     {
+
+        _teleportPlayer = _playerData.playerCore.gameObject.GetComponent<TeleportPlayer>();
+
+        if (_teleportPlayer == null)
+        { Debug.Log("Can't find Teleport Player in PlayerCore object"); return; }
+
         if (_playerData == null)
         {
             _playerData = FindObjectOfType<PlayerData>();
@@ -33,11 +39,6 @@ public class TeleportPoint : MonoBehaviour
     {
         if (other.gameObject.tag == "Dice")
         {
-           _teleportPlayer = _playerData.playerCore.gameObject.GetComponent<TeleportPlayer>();
-
-            if (_teleportPlayer == null)
-                { Debug.Log("Can't find Teleport Player in PlayerCore object"); return; }
-
            
             _collidedDice = other.gameObject;
            
@@ -48,7 +49,9 @@ public class TeleportPoint : MonoBehaviour
     
     public void DisablePoint()
     {
-        _renderer.enabled = false;  
+        //_renderer.enabled = false;  
+
+        transform.localScale = Vector3.one * 0.25f;
         _collider.enabled = false;
 
         StartCoroutine(ReactivatePoint());
@@ -56,7 +59,9 @@ public class TeleportPoint : MonoBehaviour
 
     public void EnablePoint()
     {
-        _renderer.enabled = true;
+        // _renderer.enabled = true;
+
+        transform.localScale = Vector3.one * 1f;
         _collider.enabled = true;
     }
 

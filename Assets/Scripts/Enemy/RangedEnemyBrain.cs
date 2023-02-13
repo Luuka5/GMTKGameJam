@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
+[RequireComponent(typeof(EnemyCore))]
 public class RangedEnemyBrain : MonoBehaviour
 {
 	[SerializeField] NavMeshAgent agent;
@@ -25,11 +27,12 @@ public class RangedEnemyBrain : MonoBehaviour
 
 	[SerializeField] float maxLookingAngle = 50f;
 
-	[SerializeField] WeaponIK weaponIK;
+	[SerializeField] public WeaponIK weaponIK;
 
 	[SerializeField] float distanceBehaviourRandomness;
 	[SerializeField] float speedRandomness;
 
+	[SerializeField] public EnemyCore _enemyCore;
 	float distanceToPlayer;
 
 	public enum States {Idle, Chase, Attack, RunAway, Aim, Die};
@@ -43,23 +46,34 @@ public class RangedEnemyBrain : MonoBehaviour
 		chaseDistance += Random.Range(-distanceBehaviourRandomness, distanceBehaviourRandomness);
 		speed += Random.Range(-speedRandomness, speedRandomness);
 		enemyRangedController._rangedEnemyBrain = this;
+		_enemyCore = GetComponent<EnemyCore>();
+		_enemyCore.OnDeath += Die;
+
 	}
 
-    private void FixedUpdate()
-	{
-		distanceToPlayer = GetDistanceToPlayer();
+	
 
-		//if (state == States.Attack) RotateTowardsPlayer();
-	}
+
 
 	
 	private void Start()
 	{
+		
+
 		player = enemyRangedController.enemyController.enemySettings.playerData.playerCore.transform;
 		agent.updateRotation = true;
 			distanceToPlayer = GetDistanceToPlayer();
 		
+
 		ChangeState(States.Idle);
+	}
+
+
+	private void FixedUpdate()
+	{
+		distanceToPlayer = GetDistanceToPlayer();
+
+		//if (state == States.Attack) RotateTowardsPlayer();
 	}
 
 	float GetDistanceToPlayer()
