@@ -441,11 +441,14 @@ MonoBehaviour:
   _enemyCore: {fileID: 4844169675640296311}
   _laserLayersToStop:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1
   _laserLayersToHit:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   _laserEffect: {fileID: 1875134397388881404}
+  _distanceEffectPropertyName: Distance
+  _maxDistnaceLaser: 10000
+  _shootingPointTransform: {fileID: 1379529325008879906}
 --- !u!4 &5970870946190288172 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4015095748237908468, guid: beeb59483f7dc784895bc60fb4d7aa77, type: 3}

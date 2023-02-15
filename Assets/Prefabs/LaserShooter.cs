@@ -11,18 +11,30 @@ public class LaserShooter : MonoBehaviour
     [SerializeField] private EnemyCore _enemyCore;
     [SerializeField] private LayerMask _laserLayersToStop;
     [SerializeField] private LayerMask _laserLayersToHit;
-    [SerializeField] VisualEffect _laserEffect;
-    
+    [SerializeField] private VisualEffect _laserEffect;
+    [SerializeField] private string _distanceEffectPropertyName = "Distance";
+    [SerializeField] private float _maxDistnaceLaser;
+    [SerializeField] private Transform _shootingPointTransform;
+    [SerializeField] private bool _autoShootAtStart;
 
-   public void Shoot(float _prepareTime, float _shootTime)
+    private void Start()
+    {
+        if (_autoShootAtStart)
+        Shoot(0, 50);
+    }
+
+    public void Shoot(float _prepareTime, float _shootTime)
     {
         StartCoroutine(PrepareToShoot(_prepareTime, _shootTime));
-        if (_enemyCore == null) _enemyCore.GetComponent<EnemyCore>();
+       
     }
 
     IEnumerator PrepareToShoot(float _prepareTime, float _shootTime)
     {
-        _enemyCore.weaponIK.PauseIK();
+        _enemyCore?.weaponIK.PauseIK();
+
+
+
         yield return new WaitForSeconds(_prepareTime);
 
         _isShooting = true;
@@ -33,24 +45,35 @@ public class LaserShooter : MonoBehaviour
     }
 
   
+   
 
 
     IEnumerator Shoot(float _shootTime)
     {
         _laserEffect.Play();
-
-
+        float _distance = _maxDistnaceLaser;
+        
         while (_isShooting)
         {
+            RaycastHit ray;
+            if (Physics.Raycast(_shootingPointTransform.position, _shootingPointTransform.forward, out ray, Mathf.Infinity, _laserLayersToStop,QueryTriggerInteraction.Ignore))
+                _distance = ray.distance;
+                
+                
+                _laserEffect.SetFloat(_distanceEffectPropertyName, _distance);
+            
 
-            Collider[] _hitColliders = Physics.OverlapBox(gameObject.transform.position, transform.localScale / 2, Quaternion.identity, +_laserLayersToHit);
+
+            Collider[] _hitColliders = Physics.OverlapBox(_shootingPointTransform.position+_shootingPointTransform.forward*_distance/2, new Vector3(1,1,_distance),_shootingPointTransform.rotation, _laserLayersToHit);
             foreach (Collider _collider in _hitColliders)
             {
-                _collider.GetComponent<IDamageable>()?.TakeDamage(50);
+                _collider.GetComponent<IDamageable>()?.TakeDamage(1);
             }
 
             yield return new WaitForFixedUpdate();
         }
-        _enemyCore.weaponIK.UnPauseIK();
+        _enemyCore?.weaponIK.UnPauseIK();
     }
+    
+    
 }
